@@ -1,0 +1,16 @@
+export interface IUserProfile {
+  user_id?: number,
+  email: string,
+  first_name: string,
+  last_name: string,
+  image_file: string,
+  phone: string,
+  country: string,
+  bio: string,
+  date_of_birth: string,
+  website_url: string,
+  facebook: string,
+  instagram: string,
+  twitter: string,
+  linkedin: string,
+}

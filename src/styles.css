@@ -1,1 +1,323 @@
 /* You can add global styles to this file, and also import other style files */
+*,
+html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+}
+
+body {
+  background: #36455a;
+  color: #ffffff;
+}
+
+section {
+  min-height: 90vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 1px;
+  font-weight: 300;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+a,
+a:hover{
+  color: #ffffff;
+  text-decoration: none;
+}
+
+nav{
+  background: #1b1e21 !important;
+  z-index: 10;
+}
+
+img {
+  width: 100%;
+}
+
+.sidebar {
+  background: #1b1e21 !important;
+  height: auto !important;
+  min-height: 100vh;
+}
+
+.back-title {
+  font-weight: 200;
+}
+
+.back-title span {
+  font-weight: 300;
+}
+
+.profile-wrapper {
+  height: 500px;
+  width: 100%;
+  background: #293647;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.activities-wrapper {
+  height: 200px;
+  width: 100%;
+  margin: 1rem 0;
+  background: #293647;
+  border-radius: 8px;
+}
+
+.nav-item a {
+  font-size: 15px;
+  font-weight: 300;
+  font-family: Roboto, sans-serif;
+  display: flex;
+  align-items: center;
+  color: #4e555b;
+}
+
+.nav-item a.active {
+  color: #ffffff !important;
+}
+
+.nav-item a .fa {
+  font-size: 20px;
+}
+
+.modal-content {
+    background: #36455a;
+}
+
+.btn {
+  font-weight: 300 !important;
+  cursor: pointer;
+  border: 1px solid transparent !important;
+  border-radius: 0px;
+}
+
+.btn-skin {
+  background: #222d3c !important;
+  color: #aaaaaa;
+}
+
+.btn-skin:hover {
+  color: #aaaaaa;
+}
+
+.btn-secondary {
+  background: #868e96 !important;
+  color: #1b1e21;
+}
+
+.btn-secondary:hover {
+  background: transparent !important;
+  color: #868e96 !important;
+  border: 1px solid #868e96  !important;
+}
+
+.btn-primary {
+  background: #1d8dff !important;
+  color: #ffffff !important;
+  border: 1px solid #1d8dff;
+}
+
+.btn-primary:hover {
+  background: transparent !important;
+  color: #1d8dff !important;
+  border: 1px solid #1d8dff  !important;
+}
+
+.btn-info {
+  background: #4ebfbb !important;
+  color: #1b1e21 !important;
+  border: 1px solid #4ebfbb;
+}
+
+.btn-info:hover {
+  background: transparent !important;
+  color: #4ebfbb !important;
+  border: 1px solid #4ebfbb  !important;
+}
+
+.btn-success {
+  background: #61d85e !important;
+  color: #1b1e21 !important;
+  border: 1px solid #61d85e;
+}
+
+.btn-success:hover {
+  background: transparent !important;
+  color: #61d85e  !important;
+  border: 1px solid #61d85e !important;
+}
+
+.btn-warning {
+  background: #fdd468 !important;
+  color: #1b1e21 !important;
+  border: 1px solid #fdd468;
+}
+
+.btn-warning:hover {
+  background: transparent !important;
+  color: #fdd468  !important;
+  border: 1px solid #fdd468 !important;
+}
+
+.btn-danger {
+  background: #ff8253 !important;
+  color: #1b1e21 !important;
+  border: 1px solid #ff8253;
+}
+
+.btn-danger:hover {
+  background: transparent !important;
+  color: #ff8253 !important;
+  border: 1px solid #ff8253 !important;
+}
+
+.btn-gray {
+  background: #dee2e6 !important;
+  color: #1b1e21 !important;
+  border: 1px solid #dee2e6;
+}
+
+.btn-gray:hover {
+  background: transparent !important;
+  color: #dee2e6 !important;
+  border: 1px solid #dee2e6 !important;
+}
+
+.btn-inverse {
+  background: #f8f8f8 !important;
+  color: #1b1e21 !important;
+  border: 1px solid #f8f8f8;
+}
+
+.btn-inverse:hover {
+  background: transparent !important;
+  color: #f8f8f8  !important;
+  border: 1px solid #f8f8f8  !important;
+}
+
+p {
+  font-family: "Roboto Light", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.4px;
+  font-size: 16px;
+  color: #bdb7ce;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.alert {
+  color: #1b1e21 !important;
+  border: none !important;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  padding: 10px 20px !important;
+}
+
+.alert-success {
+  background: #61d85e !important;
+}
+
+.alert-danger {
+  background: #ff8253 !important;
+}
+
+.alert-info {
+  background: #4ebfbb !important;
+}
+
+.alert-secondary {
+  background: #868e96 !important;
+  color: #ffffff !important;
+}
+
+.alert-primary {
+  background: #1d8dff !important;
+  color: #ffffff !important;
+}
+
+.alert-warning {
+  background: #fdd468 !important;
+}
+
+.badge {
+  height: 25px;
+  min-width: 25px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-family: "Oswald", sans-serif;
+  color: #1b1e21;
+}
+
+.badge-success {
+    background: #61d85e;
+}
+
+.badge-primary {
+    background: #1d8dff;
+    color: #ffffff;
+}
+
+.badge-warning {
+    background: #fdd468;
+}
+
+.badge-inverse {
+    background: #f8f8f8;
+}
+
+.form-control {
+    border-radius: 0 !important;
+}
+
+/*.form-control:focus{*/
+/*  background: #f4f4f4 !important;*/
+/*  color: #222d3c !important*/
+/*}*/
+
+input,
+textarea{
+  background: #222d3c !important;
+  border-radius: 0 !important;
+  color: #fff !important;
+  font-weight: 300 !important;
+  font-size: 15px !important;
+  font-family: "Roboto", sans-serif;
+}
+
+/*input:focus,*/
+/*textarea:focus {*/
+/*  background: #f4f4f4 !important;*/
+/*  color: #222d3c !important*/
+/*}*/
+
+ul li {
+  list-style: none;
+}
+
+.subscribe {
+  background: rgba(0, 0, 0, 0.5) !important;
+  position: fixed;
+  width: 30%;
+  bottom: 0px;
+  right: 0;
+  z-index: 5;
+}
+
+@media screen and (max-width: 768px) {
+  .subscribe {
+    width: 70%;
+  }
+}
