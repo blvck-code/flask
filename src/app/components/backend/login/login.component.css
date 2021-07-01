@@ -1,0 +1,47 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.form-input {
+  display: flex;
+  align-items: center;
+}
+
+.login form h3 {
+  font-weight: 300 !important;
+}
+
+.login form {
+  border-radius: 10px;
+  background: #293647;
+  padding: 2rem 1rem;
+}
+
+.login form label {
+  font-weight: lighter;
+  letter-spacing: 1px;
+  font-weight: 300;
+  font-size: 15px;
+  font-family: "Arial Narrow", sans-serif;
+}
+
+.login form .form-control {
+  background: #222d3c !important;
+  color: #ffffff;
+  border-radius: 0;
+  /*border: 1px solid #222d3c;*/
+  font-family: "Arial Narrow", sans-serif;
+  letter-spacing: 1.2px;
+  font-weight: lighter;
+}
+
+.btn-login {
+  background: #ff8253;
+}
+
+

@@ -1,0 +1,40 @@
+.sidebar {
+  background: #1b1e21 !important;
+  height: auto;
+  min-height: 100vh;
+}
+
+.summary-item {
+  padding: 1rem 3rem;
+}
+
+.summary-item__wrapper {
+  background: #293647;
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+}
+
+.nav-item a {
+  font-size: 15px;
+  font-weight: 300;
+  font-family: Roboto, sans-serif;
+  display: flex;
+  align-items: center;
+  color: #4e555b;
+}
+
+.summary-item__wrapper .icon{
+}
+
+.summary-item__wrapper .fa{
+  font-size: 65px;
+}
+
+.nav-item a.active {
+  color: #ffffff !important;
+}
+
+.nav-item a .fa {
+  font-size: 18px;
+}
+

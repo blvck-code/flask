@@ -1,0 +1,116 @@
+<html>
+
+  <body>
+    <app-nav></app-nav>
+
+    <div style="background: #1b1e21" class="container-fluid">
+      <div class="row">
+
+<!--        Start sidebar-->
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <app-sidebar></app-sidebar>
+        </nav>
+
+<!--        End sidebar-->
+
+        <main style="border-top-left-radius: 20px !important; background: #36455a;" role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h2 class="back-title text-capitalize">Edit experience - <span>{{ experience?.company }}</span></h2>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+                <button class="btn btn-sm btn-outline-secondary">Share</button>
+                <button class="btn btn-sm btn-outline-secondary">Export</button>
+              </div>
+              <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                <span data-feather="calendar"></span>
+                This week
+              </button>
+            </div>
+          </div>
+          <div>
+            <div class="edit-experience py-2">
+              <div class="pb-3 px-3 d-flex justify-content-between align-items-center">
+                <a routerLink="/backend/experience"  class="btn btn-skin btn-sm rounded-0">Go Back</a>
+              </div>
+               <div class="row px-3">
+                <div class="col-md-6 p-3">
+                  <div *ngIf="!editMode" class="experience p-5">
+                    <h3>Firm: {{ experience?.company }}</h3>
+                    <h4>Job title: {{experience?.position}}</h4>
+                    <div class="d-flex align-items-center justify-content-between py-2">
+                      <p>Start year: {{experience?.start}}</p>
+                      <p>End year: {{experience?.end}}</p>
+                    </div>
+                    <h6>{{experience?.desc}}</h6>
+                    <div class="experience-footer mt-3 d-flex align-items-center justify-content-end">
+                      <button (click)="changeEditMode()" class="btn btn-inverse btn-sm rounded-0 mr-1">Update experience</button>
+                      <button type="button" data-toggle="modal" data-target="#deleteExpe" class="btn btn-danger btn-sm rounded-0 ml-1">Delete</button>
+                    </div>
+                  </div>
+                  <div *ngIf="editMode" class="experience p-4">
+                    <h4 class="pb-2">Edit form</h4>
+                    <form [formGroup]="updateForm" (ngSubmit)="updateExpe()" action="">
+                    <div class="form-group">
+                      <input [class.is-invalid]="getCompany?.invalid && getCompany?.touched" formControlName="company" type="text" class="form-control">
+                      <small class="text-danger" *ngIf="getCompany?.invalid && getCompany?.touched">Firm name is Required</small>
+                    </div>
+                    <div class="form-group">
+                      <input [class.is-invalid]="getPosition?.invalid && getPosition?.touched" formControlName="position" type="text" class="form-control">
+                      <small class="text-danger" *ngIf="getPosition?.invalid && getPosition?.touched">Job title is required</small>
+                    </div>
+                    <div class="form-group d-flex align-items-center justify-content-between">
+                      <input [class.is-invalid]="getStart?.invalid && getStart?.touched" formControlName="start" type="text" class="form-control mr-1">
+                      <input [class.is-invalid]="getEnd?.invalid && getEnd?.touched" formControlName="end" type="text" class="form-control ml-1">
+                    </div>
+                    <div class="form-group">
+                      <textarea [class.is-invalid]="getDesc?.invalid && getDesc?.touched" formControlName="desc" name="" id="" cols="30" rows="4" class="form-control"></textarea>
+                      <small *ngIf="getDesc?.invalid && getDesc?.touched" class="text-danger">Job description is required</small>
+                    </div>
+                      <div class="experience-footer mt-3 d-flex align-items-center justify-content-end">
+                      <button class="btn btn-primary btn-sm rounded-0 mr-1">Update change</button>
+                      <button (click)="changeEditMode()" class="btn btn-secondary btn-sm rounded-0 ml-1">Cancel</button>
+                    </div>
+                  </form>
+                  </div>
+                </div>
+                <div *ngIf="editMode" class="col-md-6 p-3">
+                  <div class="experience p-5">
+                    <h3>Firm: {{ getCompany?.value ? getCompany?.value : experience.company }}</h3>
+                    <h4>Job title: {{getPosition?.value ? getPosition?.value : experience?.position}}</h4>
+                    <div class="d-flex align-items-center justify-content-between py-2">
+                      <p>Start year: {{getStart?.value ? getStart?.value : experience?.start}}</p>
+                      <p>End year: {{getEnd?.value ? getEnd?.value : experience?.end}}</p>
+                    </div>
+                    <h6>{{getDesc?.value ? getDesc?.value : experience?.desc}}</h6>
+                  </div>
+                </div>
+               </div>
+            </div>
+          </div>
+
+        </main>
+      </div>
+    </div>
+  </body>
+<div id="deleteExpe" class="modal fade">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title back-title">Delete experience</h5>
+        <button type="button" data-dismiss="modal" class="close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h6>Are you sure you want to delete this experience?</h6>
+      </div>
+      <div class="modal-footer">
+        <button (click)="deleteExperience(experience.id)" class="btn btn-danger">Yes, delete</button>
+        <button data-dismiss="modal" class="btn btn-secondary">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+</html>
+
+
+

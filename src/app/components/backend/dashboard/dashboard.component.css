@@ -1,0 +1,125 @@
+.sidebar {
+  background: #1b1e21 !important;
+  height: auto;
+  min-height: 100vh;
+}
+
+.summary-item {
+  padding: 1rem;
+}
+
+.summary-item__wrapper {
+  background: #293647;
+  padding: 1rem 1.5rem;
+  border-radius: 5px;
+}
+
+.nav-item a {
+  font-size: 15px;
+  font-weight: 300;
+  font-family: Roboto, sans-serif;
+  display: flex;
+  align-items: center;
+  color: #4e555b;
+}
+
+.summary-header{
+}
+
+.summary-header .desc {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.summary-header .desc h2,
+.summary-header .desc p {
+  margin: 0;
+  display: block;
+  width: 100%;
+}
+
+.summary-footer p {
+  font-size: 15px;
+}
+
+.summary-footer {
+}
+
+.summary-footer h4,
+.summary-footer p {
+  margin: 0;
+  display: block;
+  width: 100%;
+  font-weight: 300;
+  font-family: "Roboto", sans-serif;
+}
+
+
+.summary-footer h4 {
+  font-size: 25px;
+}
+
+.summary-item__wrapper .fa{
+  font-size: 65px;
+}
+
+.nav-item a.active {
+  color: #ffffff !important;
+}
+
+.nav-item a .fa {
+  font-size: 18px;
+}
+
+.notify {
+  background: #293647;
+  border-radius: 5px;
+}
+
+.notify-item span {
+  font-size: 13px;
+  font-family: Roboto, sans-serif !important;
+  font-weight: 300;
+}
+
+
+.activities {
+  height: 310px;
+  background: #293647;
+  border-radius: 5px;
+}
+
+.notify a {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.project {
+  background: #293647;
+  height: 130px;
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.project img {
+  position: absolute;
+  border-radius: 5px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-desc {
+  z-index: 2;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  height: 25%;
+}

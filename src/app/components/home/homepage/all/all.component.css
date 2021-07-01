@@ -1,0 +1,45 @@
+.projects {
+}
+
+.project {
+  height: 200px;
+  width: 100%;
+  padding: 1rem;
+}
+
+.project-wrapper h3 {
+  z-index: 2;
+  color: #ffffff;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.project-wrapper {
+  border-radius: 8px;
+  background: #1b1e21;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("../../../../../assets/imgs/kababa.jpg");
+  background-position: center;
+  background-size: cover;
+  transition: all 0.3s ease-in;
+  position: relative;
+}
+.project-wrapper::after {
+  border: 1px solid #ffffff;
+  position: absolute;
+  border-radius: 10px;
+  content: '';
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.project-wrapper:hover {
+  transform: scale(1.05);
+}

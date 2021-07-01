@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row login">
+    <form novalidate [formGroup]="userForm" (ngSubmit)="onSubmit()" class="col-10 col-lg-5 col-md-7 col-sm-12 mx-auto">
+      <h3 class="text-center font-weight-normal py-2">Login to Access Backend</h3>
+      <span class="text-muted text-center py-1 d-block">Use your email to sign in.</span>
+      <div class="form-group py-1 px-3">
+        <label class="ml-4">Email address</label>
+        <div class="form-input">
+          <i class="fa fa-envelope-o"></i>
+          <input [class.is-invalid]="getEmail?.invalid && getEmail?.touched" formControlName="email" type="text" class="form-control ml-3">
+        </div>
+        <div *ngIf="getEmail?.invalid && getEmail?.touched">
+          <small *ngIf="getEmail?.errors?.required" class="text-danger text-center d-block">Email address is required</small>
+          <small *ngIf="getEmail?.errors?.email" class="text-danger text-center d-block">Enter a valid email address</small>
+        </div>
+      </div>
+      <div class="form-group py-1 px-3">
+        <label class="ml-4">Password</label>
+        <div class="form-input">
+          <i class="fa fa-lock"></i>
+          <input [class.is-invalid]="getPass?.invalid && getPass?.touched" formControlName="password" type="password" class="form-control ml-3">
+        </div>
+        <div *ngIf="getPass?.invalid && getPass?.touched">
+          <small *ngIf="getPass?.errors?.required" class="text-danger text-center d-block">Password is required</small>
+        </div>
+      </div>
+      <div class="form-group px-3 d-flex align-items-center">
+        <i style="opacity: 0;" class="fa fa-lock"></i>
+        <button [disabled]="userForm.invalid" class="btn btn-sm btn-login btn-block ml-3 rounded-0">Login</button>
+      </div>
+    </form>
+  </div>
+</div>

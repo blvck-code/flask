@@ -1,0 +1,245 @@
+<html>
+
+  <body>
+    <app-nav></app-nav>
+
+
+    <div style="background: #1b1e21" class="container-fluid">
+      <div class="row">
+
+<!--        Start sidebar-->
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <app-sidebar></app-sidebar>
+        </nav>
+
+<!--        End sidebar-->
+
+        <main style="border-top-left-radius: 20px !important; background: #36455a;" role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h2 class="back-title">Projects</h2>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+                <button class="btn btn-sm btn-outline-secondary">Share</button>
+                <button class="btn btn-sm btn-outline-secondary">Export</button>
+              </div>
+              <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                <span data-feather="calendar"></span>
+                This week
+              </button>
+            </div>
+          </div>
+          <div>
+            <div class="profile py-2">
+              <mat-spinner *ngIf="loading" color="primary"></mat-spinner>
+              <div *ngIf="!addMode" class="projects container">
+                <div class="pb-2 d-flex justify-content-between align-items-center">
+                  <h4 class="back-title text-capitalize">All Projects</h4>
+                  <button type="button" (click)="setAddMode()" class="btn btn-sm btn-inverse">Add project</button>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-sm-12 p-3">
+                    <div class="project p-1">
+                      <div class="project-img">
+                        <img src="{{img}}" alt="">
+                      </div>
+                      <div class="project-desc px-2 pb-2 pt-3">
+                        <h6>Valentinos Village Bistro</h6>
+                        <a class="btn btn-sm btn-inverse">Details</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-12 p-3">
+                    <div class="project p-1">
+                      <div class="project-img">
+                        <img src="{{img}}" alt="">
+                      </div>
+                      <div class="project-desc px-2 pb-2 pt-3">
+                        <h6>Valentinos Village Bistro</h6>
+                        <a class="btn btn-sm btn-info">Details</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 col-sm-12 p-3">
+                    <div class="project p-1">
+                      <div class="project-img">
+                        <img src="{{img}}" alt="">
+                      </div>
+                      <div class="project-desc px-2 pb-2 pt-3">
+                        <h6>Valentinos Village Bistro</h6>
+                        <a class="btn btn-sm btn-info">Details</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 col-sm-12 p-3">
+                    <div class="project p-1">
+                      <div class="project-img">
+                        <img src="{{img}}" alt="">
+                      </div>
+                      <div class="project-desc px-2 pb-2 pt-3">
+                        <h6>Valentinos Village Bistro</h6>
+                        <a class="btn btn-sm btn-info">Details</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 col-sm-12 p-3">
+                    <div class="project p-1">
+                      <div class="project-img">
+                        <img src="{{img}}" alt="">
+                      </div>
+                      <div class="project-desc px-2 pb-2 pt-3">
+                        <h6>Valentinos Village Bistro</h6>
+                        <a class="btn btn-sm btn-info">Details</a>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div *ngIf="addMode" class="add-project container">
+                <div class="row">
+                  <div class="col-md-12 mx-auto px-4 p-3">
+                    <div class="pb-2 d-flex justify-content-between align-items-center">
+                      <h4 class="back-title text-capitalize">Add project</h4>
+                      <button type="button" (click)="setAddMode()" class="btn btn-sm btn-danger">Cancel</button>
+                    </div>
+                    <form class="add-project-wrapper p-4">
+                      <div class="row">
+                        <div class="col-md-3 project-thumb py-3">
+                          <div  class="project-thumb_inner">
+                            <span *ngIf="!thumb">Click here to add project thumbnail</span>
+                            <input (change)="getThumb($event)" type="file">
+                            <img *ngIf="thumb" src="{{thumb}}">
+                          </div>
+                        </div>
+                        <div class="col-md-9 project-main pt-3">
+                          <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Project title">
+                          </div>
+                          <div class="form-group d-flex align-items-center">
+                            <input type="text" class="form-control mr-1" placeholder="Source code URL">
+                            <input type="text" class="form-control ml-1" placeholder="Website URL">
+                          </div>
+                          <div class="form-group">
+                            <textarea name="" id="" placeholder="Project description" cols="30" rows="6" class="form-control"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row p-3">
+                        <div class="project-bg">
+                          <span *ngIf="!bgImage">Click here to add project background</span>
+                          <input (change)="getBgImage($event)" type="file">
+                          <img *ngIf="bgImage" src="{{bgImage}}">
+                        </div>
+                      </div>
+                      <div class="row add-project-footer p-3">
+                        <div class="col-md-4 py-2">
+                          <h5>Categories</h5>
+                          <div class="add-project-categories">
+                            <div class="d-flex align-items-center justify-content-between px-3 py-1">
+                              <mat-checkbox color="primary">
+                                Angular
+                              </mat-checkbox>
+                              <mat-checkbox color="primary">
+                                React JS
+                              </mat-checkbox>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between px-3 py-1">
+                              <mat-checkbox color="primary">
+                                Flask
+                              </mat-checkbox>
+                              <mat-checkbox color="primary">
+                                Flask APIS
+                              </mat-checkbox>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between px-3 py-1">
+                              <mat-checkbox color="primary">
+                                Django
+                              </mat-checkbox>
+                              <mat-checkbox color="primary">
+                                Django APIS
+                              </mat-checkbox>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between px-3 py-1">
+                              <mat-checkbox color="primary">
+                                PHP
+                              </mat-checkbox>
+                              <mat-checkbox color="primary">
+                                Others
+                              </mat-checkbox>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-4 py-2">
+                          <h5>Subcategories</h5>
+                          <div class="add-project-categories">
+                            <div class="d-flex align-items-center justify-content-between px-3 py-1">
+                              <mat-checkbox color="primary">
+                                Ecommerce
+                              </mat-checkbox>
+                              <mat-checkbox color="primary">
+                                Clone
+                              </mat-checkbox>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between px-3 py-1">
+                              <mat-checkbox color="primary">
+                                Portfolio
+                              </mat-checkbox>
+                              <mat-checkbox color="primary">
+                                Agency
+                              </mat-checkbox>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between px-3 py-1">
+                              <mat-checkbox color="primary">
+                                Django
+                              </mat-checkbox>
+                              <mat-checkbox color="primary">
+                                Django APIS
+                              </mat-checkbox>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between px-3 py-1">
+                              <mat-checkbox color="primary">
+                                Personal
+                              </mat-checkbox>
+                              <mat-checkbox color="primary">
+                                Others
+                              </mat-checkbox>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-4 py-2">
+                          <h5>Extras</h5>
+                           <div class="d-flex flex-column px-3 py-1">
+                             <mat-checkbox color="primary">
+                                Show on home page
+                             </mat-checkbox>
+                             <mat-checkbox color="primary">
+                                Completed
+                             </mat-checkbox>
+                             <mat-checkbox color="primary">
+                                Private
+                             </mat-checkbox>
+                             <mat-checkbox color="primary">
+                               Save later
+                              </mat-checkbox>
+                           </div>
+                        </div>
+                      </div>
+                      <button class="btn btn-primary btn-block rounded my-2">Add project</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+

@@ -1,0 +1,128 @@
+<html>
+
+  <body>
+    <app-nav></app-nav>
+
+    <div style="background: #1b1e21" class="container-fluid">
+      <div class="row">
+
+<!--        Start sidebar-->
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <app-sidebar></app-sidebar>
+        </nav>
+
+<!--        End sidebar-->
+
+        <main style="border-top-left-radius: 20px !important; background: #36455a;" role="main" class="col-md-9 ml-sm-auto col-lg-10 py-3 px-4">
+
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h2 class="back-title">Events - <span>Feed</span></h2>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+                <button class="btn btn-sm btn-outline-secondary">Share</button>
+                <button class="btn btn-sm btn-outline-secondary">Export</button>
+              </div>
+              <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                <span data-feather="calendar"></span>
+                This week
+              </button>
+            </div>
+          </div>
+          <div>
+
+            <div class="feeds container">
+              <div class="row feeds-wrapper m-3">
+                <div class="col-md-2 feeds-dates"></div>
+                <div class="col-md-8 feeds-content">
+
+                  <div class="feeds-item">
+                    <div class="date">
+                      <small>today</small>
+                      <p>8:03 pm</p>
+                    </div>
+                    <span class="circle">
+                      <span class="circle-content">
+                        <i class="fa fa-comment-o"></i>
+                      </span>
+                    </span>
+                    <span class="pointer"></span>
+                  </div>
+
+                  <div class="feeds-item my-2">
+                    <div class="date">
+                      <small>today</small>
+                      <p>6:00 pm</p>
+                    </div>
+                    <span class="circle">
+                      <span class="circle-content">
+                        <i class="fa fa-comments-o"></i>
+                      </span>
+                    </span>
+                    <span class="pointer"></span>
+                  </div>
+
+                  <div class="feeds-item my-2">
+                    <div class="date">
+                      <small>yesterday</small>
+                      <p>10:56 pm</p>
+                    </div>
+                    <span style=" background: #419fff" class="circle">
+                      <span style=" background: #1d8dff"  class="circle-content">
+                        <i class="fa fa-thumbs-o-up"></i>
+                      </span>
+                    </span>
+                    <span class="pointer"></span>
+                  </div>
+
+                  <div class="feeds-item my-2">
+                    <div class="date">
+                      <small>yesterday</small>
+                      <p>8:03 pm</p>
+                    </div>
+                    <span style=" background: #ff9c77;"  class="circle">
+                      <span style=" background: #ff8253;"  class="circle-content">
+                        <i class="fa fa-comments-o"></i>
+                      </span>
+                    </span>
+                    <span class="pointer"></span>
+                  </div>
+
+                  <div class="feeds-item my-2">
+                    <div class="date">
+                      <small>yesterday</small>
+                      <p>8:03 pm</p>
+                    </div>
+                    <span style=" background: #ff9c77;"  class="circle">
+                      <span style=" background: #ff8253;"  class="circle-content">
+                        <i class="fa fa-comments-o"></i>
+                      </span>
+                    </span>
+                    <span class="pointer"></span>
+                  </div>
+
+                  <div class="feeds-item my-2">
+                    <div class="date">
+                      <small>yesterday</small>
+                      <p>8:03 pm</p>
+                    </div>
+                    <span style=" background: #ff9c77;"  class="circle">
+                      <span style=" background: #ff8253;"  class="circle-content">
+                        <i class="fa fa-comments-o"></i>
+                      </span>
+                    </span>
+                    <span class="pointer"></span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+

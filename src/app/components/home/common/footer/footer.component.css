@@ -1,0 +1,13 @@
+footer {
+  background: #293647;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+footer p {
+  font-size: 15px;
+  margin: 0;
+}

@@ -1,0 +1,80 @@
+.profile-content {
+  min-height: 100vh;
+  padding: 0 !important;
+}
+
+.profile {
+  background: #222d3c;
+}
+
+.profile-header,
+.profile-contacts{
+  border-bottom: 1px solid #aaaaaa;
+}
+
+.profile-header img {
+  border-radius: 50%;
+  height: 180px;
+  width: 180px;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+}
+
+.profile-links-group a {
+  min-width: 70px;
+  color: #ffffff !important;
+  font-size: 14px !important;
+  border-radius: 5px;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.profile-links-group a.facebook {
+  background: #3b599f !important;
+}
+
+.profile-links-group a.linkedin {
+  background: #0194d7 !important;
+}
+
+.profile-links-group a.twitter {
+  background: #31cbff !important;
+}
+
+.profile-links-group a.instagram {
+  background: #ff7b6e !important;
+}
+
+.extra,
+.extra-nav {
+  background: #222d3c;
+}
+
+.extra-nav li,
+.extra-nav li h6 {
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+}
+
+.extra-nav li .active {
+  background: #36455a;
+}
+
+.extra-wrapper {
+  border-radius: 5px;
+  min-height: 100vh;
+  background: #36455a;
+  padding-top: 0 !important;
+}
+
+.edit-profile-img img{
+  border-radius: 50%;
+  height: 280px;
+  width: 280px;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+}
+
+
+

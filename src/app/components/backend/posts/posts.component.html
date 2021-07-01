@@ -1,0 +1,133 @@
+<html>
+
+  <body>
+    <app-nav></app-nav>
+
+    <div style="background: #1b1e21" class="container-fluid">
+      <div class="row">
+
+<!--        Start sidebar-->
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <app-sidebar></app-sidebar>
+        </nav>
+
+<!--        End sidebar-->
+
+        <main style="border-top-left-radius: 20px !important; background: #36455a;" role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h2 class="back-title text-capitalize">Blog - <span>Posts</span></h2>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+                <button class="btn btn-sm btn-outline-secondary">Share</button>
+                <button class="btn btn-sm btn-outline-secondary">Export</button>
+              </div>
+              <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                <span data-feather="calendar"></span>
+                This week
+              </button>
+            </div>
+          </div>
+          <div>
+            <div class="profile py-2">
+              <div *ngIf="!addPost" class="pb-3 d-flex justify-content-between align-items-center">
+                <h4 class="back-title text-capitalize">All Posts</h4>
+                <button (click)="addPostMode()" type="button" data-toggle="modal" class="btn btn-sm btn-success">
+                  Add new post
+                </button>
+              </div>
+              <div *ngIf="addPost" class="pb-3 d-flex justify-content-between align-items-center">
+                <h4 class="back-title text-capitalize">Add new post</h4>
+                <button (click)="addPostMode()" type="button" data-toggle="modal" class="btn btn-sm btn-inverse">
+                  Go Back
+                </button>
+              </div>
+              <div class="row">
+                <div *ngIf="!addPost" class="col-md-12">
+                  <mat-spinner *ngIf="loading" color="primary"></mat-spinner>
+                  <div *ngIf="!loading" class="posts">
+                    <div class="post">
+                      <img src="{{img}}" alt="">
+                      <div class="post-des">
+                        <span class="py-3">13 Mar</span>
+                        <h2 class="mat-display-2">Lifestyle brand</h2>
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur
+                          adipisicing elit. Alias dolor dolorem ex nemo,
+                          obcaecati omnis repellendus sed similique soluta suscipit!
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                          Accusamus ad consectetur consequatur, corporis dolorum earum eligendi
+                          et eveniet ex explicabo fuga ipsa ipsam mollitia quasi ratione velit vitae?
+                          Architecto, nisi!
+                        </p>
+                        <a class="btn btn-sm btn-danger" >Full Article</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="post-list container py-2">
+                  <div class="post-item my-3 row">
+                    <a href="" class="col-md-3 col-sm-12 post-item-img">
+                      <img src="{{ img }}" alt="">
+                    </a>
+                    <div class="col-md-7 col-sm-12 post-item-desc">
+                      <h3>Next generation admin template</h3>
+                      <span>Nairobi KE 201 88</span>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam distinctio eius libero nesciunt officia officiis reiciendis! Beatae culpa deserunt dolorum harum non nulla officiis quibusdam temporibus totam voluptatum. Blanditiis debitis dignissimos ducimus, ea fugiat provident sint velit voluptates? Dolorem, molestias.</p>
+                    </div>
+                    <div class="col-md-2 col-sm-12 py-3 post-item-extra">
+                      <h2>$9,700</h2>
+                      <span>PER WEEK</span>
+                      <a href="" class="btn btn-sm btn-primary mt-2">
+                        Read More
+                      </a>
+                    </div>
+                  </div>
+                  <div class="post-item my-3 row">
+                    <a href="" class="col-md-3 col-sm-12 post-item-img">
+                      <img src="{{ img }}" alt="">
+                    </a>
+                    <div class="col-md-7 col-sm-12 post-item-desc">
+                      <h3>Next generation admin template</h3>
+                      <span>Nairobi KE 201 88</span>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam distinctio eius libero nesciunt officia officiis reiciendis! Beatae culpa deserunt dolorum harum non nulla officiis quibusdam temporibus totam voluptatum. Blanditiis debitis dignissimos ducimus, ea fugiat provident sint velit voluptates? Dolorem, molestias.</p>
+                    </div>
+                    <div class="col-md-2 col-sm-12 py-3 post-item-extra">
+                      <h2>$9,700</h2>
+                      <span>PER WEEK</span>
+                      <a href="" class="btn btn-sm btn-primary mt-2">
+                        Read More
+                      </a>
+                    </div>
+                  </div>
+                  <div class="post-item my-3 row">
+                    <a href="" class="col-md-3 col-sm-12 post-item-img">
+                      <img src="{{ img }}" alt="">
+                    </a>
+                    <div class="col-md-7 col-sm-12 post-item-desc">
+                      <h3>Next generation admin template</h3>
+                      <span>Nairobi KE 201 88</span>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam distinctio eius libero nesciunt officia officiis reiciendis! Beatae culpa deserunt dolorum harum non nulla officiis quibusdam temporibus totam voluptatum. Blanditiis debitis dignissimos ducimus, ea fugiat provident sint velit voluptates? Dolorem, molestias.</p>
+                    </div>
+                    <div class="col-md-2 col-sm-12 py-3 post-item-extra">
+                      <h2>$9,700</h2>
+                      <span>PER WEEK</span>
+                      <a href="" class="btn btn-sm btn-primary mt-2">
+                        Read More
+                      </a>
+                    </div>
+                  </div>
+                  <div class="post-list-pagination">
+                </div>
+              </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+

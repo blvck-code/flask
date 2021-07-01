@@ -1,0 +1,16 @@
+.sidebar {
+  background: #1b1e21 !important;
+}
+
+.nav-item  a{
+  color: #ffffff;
+}
+
+.nav-item  a.active{
+  background: #fff !important;
+  border-radius: 5px;
+}
+
+.nav-item a.active span {
+    color: #36455a !important;
+}

@@ -1,0 +1,21 @@
+    <nav style="background: #1b1e21 !important;" class="navbar navbar-expand-md sticky-top navbar-dark bg-dark">
+      <a class="navbar-brand" routerLink="/">Oluoch_jnr</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample04">
+        <ul class="navbar-nav ml-auto mr-3">
+          <li class="nav-item px-1">
+            <a class="nav-link">
+              <i class="fa fa-cogs"></i>
+            </a>
+          </li>
+          <li class="nav-item px-1">
+            <a routerLink="/backend/login" class="nav-link" (click)="logOut()">
+              <i class="fa fa-power-off"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>

@@ -1,0 +1,218 @@
+.experience__item {
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.9);
+  padding: 3rem 2rem;
+  overflow: hidden;
+  position: relative !important;
+  transition: all 500ms ease-in;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.experience__item.visible {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+}
+
+.faded {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 5rem;
+  color: transparent;
+  opacity: 0.3;
+  z-index: 0;
+  -webkit-text-stroke: 1px #ffffff;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  transform: translateY(20px);
+  transition: 0.5s all ease-in;
+}
+
+.experience__item small {
+  color: #ffffff;
+  font-family: "Lato", sans-serif !important;
+  text-transform: uppercase;
+}
+
+.experience__item:hover .faded {
+  transform: translateY(-10px);
+  opacity: 0.9;
+}
+
+.experience__item span {
+  transition: 0.5s;
+  opacity: 0;
+}
+.experience__item:hover span {
+  transition: 0.5s;
+  opacity: 1;
+}
+
+.experience__item span:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, transparent, #ffffff);
+  animation: animate1 2s linear infinite;
+}
+
+@keyframes animate1 {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.experience__item span:nth-child(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, #ffffff);
+  animation: animate2 2s linear infinite;
+  animation-delay: 1s;
+}
+
+@keyframes animate2 {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.experience__item span:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to left, transparent, #ffffff);
+  animation: animate3 2s linear infinite;
+}
+
+@keyframes animate3 {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.experience__item span:nth-child(4) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to top, transparent, #ffffff);
+  animation: animate4 2s linear infinite;
+  animation-delay: 1s;
+}
+
+@keyframes animate4 {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.experience__wrapper:nth-child(even) .experience__item {
+  background: #222d3c !important;
+}
+
+.experience__item h2 {
+  z-index: 2;
+}
+
+.experience__item h5 {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-family: "Lora", sans-serif;
+}
+
+.experience__item h5 span {
+  font-size: 16px;
+  margin-left: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: "Quicksand", sans-serif !important;
+}
+
+.experience__item h2 {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin: 0 0 1rem;
+  transition: all 0.5s ease-in;
+}
+
+.experience__item p {
+  color: #bdb7ce;
+  font-size: 16px;
+  letter-spacing: 1px;
+  transition: all 0.5s ease-in;
+}
+
+ .experience__item:nth-child(even) h2,
+.experience__item:nth-child(even) p {
+  color: #17161a;
+}
+
+ .experience__wrapper {
+   -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+ }
+
+.experience__wrapper:nth-child(odd) .experience__item{
+  box-shadow: 0px 0px 5px #bdb7ce2e;
+}
+
+.experience__wrapper:nth-child(odd):hover .experience__item{
+  box-shadow: 0px 0px 5px transparent;
+}
+
+.experience__item:hover {
+  box-shadow: none;
+}
+
+.form-control {
+  background: #293647 !important;
+  color: #fff !important;
+  font-weight: 300;
+}
+
+textarea {
+  height: 150px;
+}
+
+/*@media (min-width: 700px) {*/
+/*  .experience {*/
+/*    grid-template-columns: repeat(2, 1fr);*/
+/*    width: 90%;*/
+/*  }*/
+/*}*/
+/*@media (min-width: 1000px) {*/
+/*  .experience {*/
+/*    grid-template-columns: repeat(3, 1fr);*/
+/*    width: 90%;*/
+/*  }*/
+/*}*/
+
+

@@ -1,0 +1,253 @@
+<html>
+
+  <body>
+    <app-nav></app-nav>
+
+    <div style="background: #1b1e21" class="container-fluid">
+      <div class="row">
+
+<!--        Start sidebar-->
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <app-sidebar></app-sidebar>
+        </nav>
+
+<!--        End sidebar-->
+
+        <main style="border-top-left-radius: 20px !important; background: #36455a;" role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h2 class="back-title">Dashboard</h2>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+                <button class="btn btn-sm btn-outline-secondary">Share</button>
+                <button class="btn btn-sm btn-outline-secondary">Export</button>
+              </div>
+              <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                <span data-feather="calendar"></span>
+                This week
+              </button>
+            </div>
+          </div>
+          <div>
+
+            <!--            Summary-->
+            <div class="summary container">
+              <h3 class="back-title">Daily <span>Monitoring</span></h3>
+              <div class="row">
+
+                <div class="col-md-4 col-sm-12 summary-item">
+
+                  <div class="summary-item__wrapper">
+
+                    <!--  Summary Header-->
+                    <div class="row summary-header pb-2">
+                      <div class="icon col-3 col-md-3 col-sm-3 ">
+                        <i style="color: #1d8dff;" class="fa fa-paw"></i>
+                      </div>
+                      <div class="desc col-9 col-md-9 col-sm-9">
+                        <p class="text-uppercase">subscribers</p>
+                        <h2>12, 324</h2>
+                      </div>
+                    </div>
+
+                  <!--  Summary Footer-->
+                    <div class="row summary-footer">
+
+                      <div class="col-6 col-md-6 col-sm-6">
+                        <p class="text-capitalize">new subscribers</p>
+                        <h4 class="pt-1">40</h4>
+                      </div>
+
+                      <div class="col-6 col-md-6 col-sm-6">
+                        <p class="text-capitalize">total subscribers</p>
+                        <h4 class="pt-1">1, 332</h4>
+                      </div>
+
+                      </div>
+
+                    </div>
+                  </div>
+
+                <div class="col-md-4 col-sm-12 summary-item">
+
+                  <div class="summary-item__wrapper">
+
+                    <!--  Summary Header-->
+                    <div class="row summary-header pb-2">
+                      <div class="icon col-3 col-md-3 col-sm-3">
+                        <i style="color: #61d85e;" class="fa fa-diamond"></i>
+                      </div>
+                      <div class="desc col-9 col-md-9 col-sm-9">
+                        <p class="text-uppercase">most visited website</p>
+                        <h2>Oluoch_jnr</h2>
+                      </div>
+                    </div>
+
+                  <!--  Summary Footer-->
+                    <div class="row summary-footer">
+
+                      <div class="col-6 col-md-6 col-sm-6">
+                        <p class="text-capitalize">new visitors</p>
+                        <h4 class="pt-1">+152</h4>
+                      </div>
+
+                      <div class="col-6 col-md-6 col-sm-6">
+                        <p class="text-capitalize">total visitors</p>
+                        <h4 class="pt-1">1, 332</h4>
+                      </div>
+
+                      </div>
+
+                    </div>
+                  </div>
+
+                <div class="col-md-4 col-sm-12 summary-item">
+
+                  <div class="summary-item__wrapper">
+
+                    <!--  Summary Header-->
+                    <div class="row summary-header pb-2">
+                      <div class="icon col-3 col-md-3 col-sm-3 ">
+                        <i style=" color: #fdd468;" class="fa fa-heartbeat"></i>
+                      </div>
+                      <div class="desc col-9 col-md-9 col-sm-9">
+                        <p class="text-uppercase">most liked post</p>
+                        <h2>flask auth</h2>
+                      </div>
+                    </div>
+
+                  <!--  Summary Footer-->
+                    <div class="row summary-footer">
+
+                      <div class="col-6 col-md-6 col-sm-6">
+                        <p class="text-capitalize">total likes</p>
+                        <h4 class="pt-1">500</h4>
+                      </div>
+
+                      <div class="col-6 col-md-6 col-sm-6">
+                        <p class="text-capitalize">total comments</p>
+                        <h4 class="pt-1">1, 332</h4>
+                      </div>
+
+                      </div>
+
+                    </div>
+                  </div>
+
+              </div>
+            </div>
+            <!-- End Summary -->
+
+            <div class="container my-4">
+              <div class="row">
+                <div class="col-md-9">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <h3 class="back-title">Activities</h3>
+                    <div class="navigate d-flex align-items-center justify-content-between">
+                      <i style="opacity: 0.5" class="fa fa-chevron-left mr-2"></i>
+                      <i class="fa fa-chevron-right ml-2"></i>
+                    </div>
+                  </div>
+                  <div class="activities">
+
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <h3 style="opacity: 0 !important;" class="back-title">Notifications</h3>
+                  <div class="notify py-1">
+                    <div class="notify-title d-flex align-items-center justify-content-between px-3 py-2">
+                      <h5>Notifications</h5>
+                      <span class="badge badge-success">36</span>
+                    </div>
+                    <div class="notify-body px-3 py-1">
+
+                      <div class="notify-item py-1">
+                        <i style="color: #61d85e;" class="fa fa-thumbs-up mr-2"></i>
+                        <span>Mary liked your post</span>
+                      </div>
+
+                      <div class="notify-item py-1">
+                       <i style=" color: #fdd468;"  class="fa fa-comment-o mr-2"></i>
+                        <span>Mary commented on your post</span>
+                      </div>
+
+                      <div class="notify-item py-1">
+                        <i style="color: #61d85e;" class="fa fa-thumbs-up mr-2"></i>
+                        <span>Stacy commented on your post</span>
+                      </div>
+
+                      <div class="notify-item py-1">
+                       <i style="color: #1d8dff;"  class="fa fa-comments-o mr-2"></i>
+                        <span>You replied on Mary's comment</span>
+                      </div>
+
+                      <div class="notify-item py-1">
+                       <i style="color: #1d8dff;"  class="fa fa-comments-o mr-2"></i>
+                        <span>You replied on Stacy's comment</span>
+                      </div>
+
+                      <div class="notify-item py-1">
+                       <i style="color: #4ebfbb;"  class="fa fa-send-o mr-2"></i>
+                        <span>Stacy sent you a message</span>
+                      </div>
+
+                    <a routerLink="/backend/comments" class="text-center d-block py-3">See All <i class="fa fa-chevron-down ml-2"></i></a>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container my-4">
+            <h3 class="back-title my-2">Latest Projects</h3>
+            <div class="row px-1">
+
+              <div class="col-md-3 p-2">
+                <div class="project">
+                  <img src="{{ img }}" alt="">
+                <div class="project-desc d-flex align-items-center px-2">
+                  <h6>Kababa Resort</h6>
+                </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 p-2">
+                <div class="project">
+                  <img src="{{ img2 }}" alt="">
+                <div class="project-desc d-flex align-items-center px-2">
+                  <h6>Kababa Resort</h6>
+                </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 p-2">
+                <div class="project">
+                  <img src="{{ img3 }}" alt="">
+                <div class="project-desc d-flex align-items-center px-2">
+                  <h6>Kababa Resort</h6>
+                </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 p-2">
+                <div class="project">
+                  <img src="{{ img4 }}" alt="">
+                <div class="project-desc d-flex align-items-center px-2">
+                  <h6>Kababa Resort</h6>
+                </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+
