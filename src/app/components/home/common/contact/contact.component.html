@@ -1,8 +1,9 @@
 <div class="container mt-5 py-5 contact">
-
-  <h2 class="back-title text-capitalize pb-4 mb-4 d-block text-center">get in touch with me!</h2>
+  <h2 class="back-title text-capitalize pb-4 mb-4 d-block text-center">
+    get in touch with me!
+  </h2>
   <div class="row contact-items my-4 p-4">
-    <div class="col-md-4 mx-auto  col-sm-12 contact-item">
+    <div class="col-md-4 mx-auto col-sm-12 contact-item">
       <div class="contact-wrapper">
         <i class="fa fa-phone fa-3x"></i>
         <h6 class="text-uppercase">phone</h6>
@@ -16,8 +17,8 @@
         <i class="fa fa-phone"></i>
         <h6 class="text-uppercase">address</h6>
         <ul>
-<!--    @todo ===>>> change country to address     -->
-<!--    @todo ===>>> change instagram to github     -->
+          <!--    @todo ===>>> change country to address     -->
+          <!--    @todo ===>>> change instagram to github     -->
           <li>23rd Times Tower, Nairobi, Kenya</li>
         </ul>
       </div>
@@ -35,51 +36,105 @@
     </div>
   </div>
 
-  <h6 class="text-uppercase text-center py-3">if you got any question<br>please do not hesitate to send us a message</h6>
+  <h6 class="text-uppercase text-center py-3">
+    if you got any question<br />please do not hesitate to send us a message
+  </h6>
   <div class="row">
-      <div class="col-12 col-md-7 col-sm-12 mx-auto">
+    <div class="col-12 col-md-7 col-sm-12 mx-auto">
       <form [formGroup]="userForm" (ngSubmit)="onSubmit()" action="">
         <div class="form-group">
-          <input formControlName="email" [class.is-invalid]="getEmail?.invalid && getEmail?.touched" placeholder="Email address" type="email" class="form-control">
+          <input
+            formControlName="sender_email"
+            [class.is-invalid]="getEmail?.invalid && getEmail?.touched"
+            placeholder="Email address"
+            type="email"
+            class="form-control border-left-0 border-right-0 border-top-0"
+          />
           <div *ngIf="getEmail?.invalid && getEmail?.touched">
-            <small *ngIf="getEmail?.errors?.required" class="text-danger">Email address is required</small>
-            <small *ngIf="getEmail?.errors?.email" class="text-danger">Enter a valid email address</small>
+            <small *ngIf="getEmail?.errors?.required" class="text-danger"
+              >Email address is required</small
+            >
+            <small *ngIf="getEmail?.errors?.email" class="text-danger"
+              >Enter a valid email address</small
+            >
           </div>
         </div>
         <div class="form-group">
-          <input [class.is-invalid]="getName?.invalid && getName?.touched" formControlName="name" placeholder="Name" type="text" class="form-control">
+          <input
+            [class.is-invalid]="getName?.invalid && getName?.touched"
+            formControlName="sender_name"
+            placeholder="Name"
+            type="text"
+            class="form-control border-left-0 border-right-0 border-top-0"
+          />
           <div *ngIf="getName?.invalid && getName?.touched">
-            <small *ngIf="getName?.errors?.required" class="text-danger">Name field is required</small>
+            <small *ngIf="getName?.errors?.required" class="text-danger"
+              >Name field is required</small
+            >
           </div>
         </div>
         <div class="form-group">
-          <textarea [class.is-invalid]="getMsg?.invalid && getMsg?.touched" formControlName="message" placeholder="Message..." type="text" class="form-control"></textarea>
-          <div *ngIf="getMsg?.invalid && getMsg?.touched">
-            <small *ngIf="getMsg?.errors?.required" class="text-danger">Please enter your message...</small>
+          <input
+            [class.is-invalid]="getSubject?.invalid && getSubject?.touched"
+            formControlName="subject"
+            placeholder="Subject"
+            type="text"
+            class="form-control border-left-0 border-right-0 border-top-0"
+          />
+          <div *ngIf="getSubject?.invalid && getSubject?.touched">
+            <small *ngIf="getSubject?.errors?.required" class="text-danger"
+              >Message subject field is required</small
+            >
           </div>
         </div>
-        <div *ngIf="msg" class="alert alert-success">
+        <div class="form-group">
+          <textarea
+            [class.is-invalid]="getMsg?.invalid && getMsg?.touched"
+            formControlName="message"
+            placeholder="Message..."
+            type="text"
+            class="form-control border-left-0 border-right-0 border-top-0"
+          ></textarea>
+          <div *ngIf="getMsg?.invalid && getMsg?.touched">
+            <small *ngIf="getMsg?.errors?.required" class="text-danger"
+              >Please enter your message...</small
+            >
+          </div>
+        </div>
+        <div
+          *ngIf="msg"
+          [class.alert-success]="msgStatus === 200"
+          [class.alert-danger]="msgStatus !== 200"
+          class="alert text-center font-weight-normal"
+        >
           {{ msg }}
         </div>
-        <button style="border-radius: 0 !important;" [disabled]="!userForm.valid" class="btn btn-inverse mx-auto d-block"><i class="fa fa-send-o mr-1"></i> send message</button>
+        <button
+          style="border-radius: 0 !important"
+          [disabled]="!userForm.valid"
+          class="btn btn-inverse mx-auto d-block"
+        >
+          <i class="fa fa-send-o mr-1"></i> send message
+        </button>
       </form>
     </div>
- </div>
+  </div>
 
-  <h2 class="back-title text-capitalize d-block text-center pt-3 my-4">connect with me!</h2>
+  <h2 class="back-title text-capitalize d-block text-center pt-3 my-4">
+    connect with me!
+  </h2>
   <div class="socials">
-    <a href="{{user.facebook}}" target="_blank" class="btn btn-skin mx-2">
+    <a href="{{ user.facebook }}" target="_blank" class="btn btn-skin mx-2">
       <i class="fa fa-facebook-f"></i>
     </a>
-      <a href="{{ user.twitter }}" target="_blank" class="btn btn-skin mx-2">
+    <a href="{{ user.twitter }}" target="_blank" class="btn btn-skin mx-2">
       <i class="fa fa-twitter"></i>
     </a>
-      <a href="{{ user.instagram }}" target="_blank" class="btn btn-skin mx-2">
-      <i class="fa fa-instagram"></i>
+    <a href="{{ user.instagram }}" target="_blank" class="btn btn-skin mx-2">
+      <i class="fa fa-github"></i>
     </a>
-      <a href="{{ user.linkedin }}" target="_blank" class="btn btn-skin mx-2">
+    <a href="{{ user.linkedin }}" target="_blank" class="btn btn-skin mx-2">
       <i class="fa fa-linkedin"></i>
     </a>
-    </div>
-
+  </div>
 </div>

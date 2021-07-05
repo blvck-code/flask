@@ -1,3 +1,4 @@
+import uuid
 from server import db, login_manager, bcrypt
 from datetime import datetime
 from flask_login import UserMixin
@@ -34,13 +35,26 @@ class Auth(db.Model, UserMixin):
   def __repr__(self):
     return f"User ('{self.email}', '{self.image_file}')"
 
-class Post(db.Model):
-  __tablename__ = 'posts'
+class Article(db.Model):
+  __tablename__ = 'articles'
 
-  id = db.Column(db.Integer, primary_key=True)
+  id = db.Column(db.String(255), default=str(uuid.uuid4()), primary_key=True)
   title = db.Column(db.String(255), nullable=False)
+  body = db.Column(db.Text, nullable=False)
   cover = db.Column(db.String(255), nullable=False)
   covername = db.Column(db.String(255), nullable=False)
+  timestamp = db.Column(db.DateTime, default=datetime.utcnow(), nullable=True)
+
+  def __init__(self, id, title, body, cover, covername, timestamp):
+    self.id = str(uuid.uuid4())
+    self.title = title
+    self.body = body
+    self.cover = cover
+    self.covername = covername
+    self.timestamp = timestamp
+
+  def __repr__(self):
+    return f'Article ({self.title} on {self.timestamp})'
 
 class Experience(db.Model):
   __tablename__ = 'experiences'
@@ -96,7 +110,7 @@ class Message(db.Model):
   __tablename__ = 'messages'
 
   id = db.Column(db.Integer, primary_key=True)
-  category = db.Column(db.String(255), default='inbox', nullable=False)
+  category = db.Column(db.String(255), default='inbox', nullable=True)
   read = db.Column(db.Boolean, default=False, nullable=False)
   sender_name = db.Column(db.String(255), nullable=False)
   sender_email = db.Column(db.String(255), nullable=False)

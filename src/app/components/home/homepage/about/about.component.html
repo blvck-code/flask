@@ -1,32 +1,14 @@
 <section class="container py-5 about">
   <div class="row">
     <div class="col-10 mx-auto col-md-7 about-desc">
-      <h2 class="text-uppercase">
-        i am a fullstack developer
-      </h2>
+      <h2 class="text-uppercase">i am a fullstack developer</h2>
       <p>
-        I enjoy creating things that live on the internet, websites, applications or anything in between.
-      My main goal is to always build products that provide pixel-perfect, perfomant experiences.
+        {{ profile.bio }}
       </p>
-       <div class="about__stats">
-          <div *ngFor="let skill of skills" class="skill__item">
-            <div class="skill__title">
-              <span class="skill__name">{{ skill.title }}</span>
-              <span class="skill_percent">{{ skill.percent }}%</span>
-            </div>
-            <div class="progress">
-              <!-- @todo add width styles -->
-              <span
-                class="progress__bar"
-                style="width:{{skill.percent}}%"
-                ></span>
-            </div>
-          </div>
-      </div>
     </div>
     <div class="col-10 mx-auto col-md-5 about-img">
       <div class="about-img-wrapper">
-        <img src="{{ img }} " alt="">
+        <img src="{{ img }} " alt="" />
       </div>
     </div>
   </div>

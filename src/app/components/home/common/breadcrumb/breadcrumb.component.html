@@ -1,0 +1,39 @@
+<div class="breadcrumb rounded-0">
+  <div class="breadcrumb-overlay"></div>
+  <div
+    class="
+      breadcrumb-content
+      container
+      d-flex
+      flex-column
+      justify-content-start
+      mt-5
+      py-5
+    "
+  >
+    <div class="breadcrumb-title">
+      <h1 *ngIf="pageTitle" class="display-3 text-capitalize">
+        {{ pageTitle }}
+      </h1>
+      <h1 *ngIf="!pageTitle" class="display-3 text-capitalize">Blog posts</h1>
+    </div>
+    <h3 class="breadcrumb-info pt-3 display-5 mt-4">
+      A collection of {{ colletion }} posts
+    </h3>
+  </div>
+</div>
+<div class="breadcrumb-categories mx-auto py-5 container-fluid">
+  <div class="row">
+    <ul class="d-flex flex-wrap align-items-center">
+      <li *ngFor="let category of categories">
+        <a
+          class="fancy-link-one text-capitalize my-2 mr-4"
+          routerLinkActive="active"
+          (click)="navigateCategory(category)"
+        >
+          {{ category.title }}
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

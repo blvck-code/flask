@@ -1,0 +1,64 @@
+<app-nav></app-nav>
+<div class="articles pb-4">
+  <app-breadcrumb [pageTitle]="title"></app-breadcrumb>
+
+  <div class="articles-list mx-auto container-fluid">
+    <div
+      infiniteScroll
+      [infiniteScrollDistance]="2"
+      [infiniteScrollThrottle]="1000"
+      (scrolled)="onScroll()"
+    >
+      <div class="row mx-auto articles-list-wrapper">
+        <div
+          *ngFor="let article of articles"
+          class="col-lg-4 col-md-6 col-sm-12 my-3 articles-item"
+        >
+          <div class="articles-item-wrapper">
+            <div class="articles-item-img">
+              <img src="{{ image }}/{{ article.cover }}" alt="" />
+            </div>
+            <div
+              class="
+                articles-item-info
+                d-flex
+                flex-column
+                align-items-start
+                justify-content-between
+                p-4
+              "
+            >
+              <div class="articles-item-info-header">
+                <h6 class="article-author text-uppercase font-italic">
+                  by / maurice oluoch
+                </h6>
+              </div>
+              <div class="article-date px-2 py-2">
+                <div class="d-flex flex-column px-2 py-1 text-center">
+                  <h5 class="day m-0 py-1">
+                    {{ article.timestamp | date: "dd" }}
+                  </h5>
+                  <h6 class="month text-uppercase pt-2">
+                    {{ article.timestamp | date: "MMMM/YY" }}
+                  </h6>
+                </div>
+              </div>
+              <div class="article-title py-2">
+                <h4 class="text-capitalize">
+                  {{ article.title }}
+                </h4>
+              </div>
+              <a
+                (click)="navigateArticleDetail(article)"
+                class="fancy-link-two mt-4"
+                >read more</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p *ngIf="loading">loadi...</p>
+    <p *ngIf="finished">finished</p>
+  </div>
+</div>

@@ -1,21 +1,29 @@
 <html>
-
   <body>
     <app-nav></app-nav>
 
     <div style="background: #1b1e21" class="container-fluid">
       <div class="row">
-
-<!--        Start sidebar-->
+        <!--        Start sidebar-->
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
           <app-sidebar></app-sidebar>
         </nav>
 
-<!--        End sidebar-->
+        <!--        End sidebar-->
 
-        <main style="border-top-left-radius: 20px !important; background: #36455a;" role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3">
-
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center">
+        <main
+          style="border-top-left-radius: 20px !important; background: #36455a"
+          role="main"
+          class="col-md-9 ml-sm-auto col-lg-10 pt-3"
+        >
+          <div
+            class="
+              d-flex
+              justify-content-between
+              flex-wrap flex-md-nowrap
+              align-items-center
+            "
+          >
             <h2 class="back-title h2">User - <span>Profile</span></h2>
             <div class="btn-toolbar mb-2 mb-md-0">
               <div class="btn-group mr-2">
@@ -31,9 +39,19 @@
           <div>
             <div class="row profile-content">
               <div class="profile col-md-4 p-4">
-                <div class="profile-header d-flex justify-content-center flex-column align-items-center">
-                  <img src="{{img}}" alt="">
-                  <h3 class="py-3">{{ userProfile.last_name}} {{userProfile.first_name}}</h3>
+                <div
+                  class="
+                    profile-header
+                    d-flex
+                    justify-content-center
+                    flex-column
+                    align-items-center
+                  "
+                >
+                  <img src="{{ img }}" alt="" />
+                  <h3 class="py-3 text-capitalize">
+                    {{ userProfile.last_name }} {{ userProfile.first_name }}
+                  </h3>
                 </div>
                 <div class="profile-contacts py-2">
                   <h5 class="py-2">Contact information</h5>
@@ -51,104 +69,255 @@
                   </div>
                   <div class="profile-contacts-item mt-1">
                     <small class="text-muted">Website</small>
-                    <p class="m-0">{{ userProfile.website_url}}</p>
+                    <p class="m-0">{{ userProfile.website_url }}</p>
                   </div>
                   <div class="profile-contacts-item mt-1">
                     <small class="text-muted">Phone</small>
                     <p class="m-0">{{ userProfile.phone }}</p>
                   </div>
-
                 </div>
                 <div class="profile-links pt-4">
                   <h5 class="py-2">Connected links</h5>
-                  <div class="profile-links-group d-flex align-items-center justify-content-between">
-                    <a class="btn facebook btn-sm" target="_blank" href="{{ userProfile.facebook }}">facebook</a>
-                    <a class="btn linkedin btn-sm" target="_blank" href="{{ userProfile.linkedin }}">linkedin</a>
-                    <a class="btn twitter btn-sm" target="_blank" href="{{ userProfile.twitter }}">twitter</a>
-                    <a class="btn instagram btn-sm" target="_blank" href="{{ userProfile.instagram }}">instagram</a>
+                  <div
+                    class="
+                      profile-links-group
+                      d-flex
+                      align-items-center
+                      justify-content-between
+                    "
+                  >
+                    <a
+                      class="btn facebook btn-sm"
+                      target="_blank"
+                      href="{{ userProfile.facebook }}"
+                      >facebook</a
+                    >
+                    <a
+                      class="btn linkedin btn-sm"
+                      target="_blank"
+                      href="{{ userProfile.linkedin }}"
+                      >linkedin</a
+                    >
+                    <a
+                      class="btn twitter btn-sm"
+                      target="_blank"
+                      href="{{ userProfile.twitter }}"
+                      >twitter</a
+                    >
+                    <a
+                      class="btn github btn-sm"
+                      target="_blank"
+                      href="{{ userProfile.instagram }}"
+                      >github</a
+                    >
                   </div>
                 </div>
               </div>
 
               <div class="col-md-8 extra m-0 p-0">
-                  <div class="d-flex pr-3 flex-row align-items-center justify-content-between">
-                    <ul class="extra-nav m-0 pt-1 d-flex flex-row align-items-center">
-                      <li class="mr-2">
-                        <h6 (click)="setActive('profile')" [class.active]="active.toLowerCase() == 'profile'" class="nav-link">Edit Profile</h6>
-                      </li>
-                      <li class="mx-2">
-                        <h6 (click)="setActive('image')" [class.active]="active.toLowerCase() == 'image'" class="nav-link">Edit image</h6>
-                      </li>
-                      <li class="mx-2">
-                        <h6 (click)="setActive('skills')" [class.active]="active.toLowerCase() == 'skills'" class="nav-link">Edit skills</h6>
-                      </li>
-                      <li class="mx-2">
-                        <h6 (click)="setActive('password')" [class.active]="active.toLowerCase() == 'password'" class="nav-link">Change password</h6>
-                      </li>
-                    </ul>
-                  </div>
+                <div
+                  class="
+                    d-flex
+                    pr-3
+                    flex-row
+                    align-items-center
+                    justify-content-between
+                  "
+                >
+                  <ul
+                    class="
+                      extra-nav
+                      m-0
+                      pt-1
+                      d-flex
+                      flex-row
+                      align-items-center
+                    "
+                  >
+                    <li class="mr-2">
+                      <h6
+                        (click)="setActive('profile')"
+                        [class.active]="active.toLowerCase() == 'profile'"
+                        class="nav-link"
+                      >
+                        Edit Profile
+                      </h6>
+                    </li>
+                    <li class="mx-2">
+                      <h6
+                        (click)="setActive('image')"
+                        [class.active]="active.toLowerCase() == 'image'"
+                        class="nav-link"
+                      >
+                        Edit image
+                      </h6>
+                    </li>
+                    <li class="mx-2">
+                      <h6
+                        (click)="setActive('skills')"
+                        [class.active]="active.toLowerCase() == 'skills'"
+                        class="nav-link"
+                      >
+                        Edit skills
+                      </h6>
+                    </li>
+                    <li class="mx-2">
+                      <h6
+                        (click)="setActive('password')"
+                        [class.active]="active.toLowerCase() == 'password'"
+                        class="nav-link"
+                      >
+                        Change password
+                      </h6>
+                    </li>
+                  </ul>
+                </div>
                 <div class="extra-wrapper p-0 m-0">
-                  <div *ngIf="active.toLowerCase() === 'profile'" class="edit-profile p-3">
+                  <div
+                    *ngIf="active.toLowerCase() === 'profile'"
+                    class="edit-profile p-3"
+                  >
                     <h3 class="py-2">Edit profile</h3>
                     <form [formGroup]="profileForm" (ngSubmit)="updateForm()">
                       <div class="form-group d-flex">
-                        <input type="text" formControlName="firstName" placeholder="First name" class="form-control mr-1">
-                        <input type="text" formControlName="lastName" placeholder="Last name" class="form-control ml-1">
+                        <input
+                          type="text"
+                          formControlName="firstName"
+                          placeholder="First name"
+                          class="form-control mr-1"
+                        />
+                        <input
+                          type="text"
+                          formControlName="lastName"
+                          placeholder="Last name"
+                          class="form-control ml-1"
+                        />
                       </div>
                       <div class="form-group d-flex">
-                        <input type="text" formControlName="email" placeholder="Email" class="form-control mr-1">
-                        <input type="text" formControlName="phone" placeholder="Phone" class="form-control ml-1">
+                        <input
+                          type="text"
+                          formControlName="email"
+                          placeholder="Email"
+                          class="form-control mr-1"
+                        />
+                        <input
+                          type="text"
+                          formControlName="phone"
+                          placeholder="Phone"
+                          class="form-control ml-1"
+                        />
                       </div>
                       <div class="form-group d-flex">
-                        <input type="text" formControlName="country" placeholder="Country" class="form-control mr-1">
-                        <input type="date" formControlName="dateOfBirth" placeholder="Date of birth" class="form-control ml-1">
+                        <input
+                          type="text"
+                          formControlName="country"
+                          placeholder="Country"
+                          class="form-control mr-1"
+                        />
+                        <input
+                          type="date"
+                          formControlName="dateOfBirth"
+                          placeholder="Date of birth"
+                          class="form-control ml-1"
+                        />
                       </div>
                       <div class="form-group">
-                        <input type="text" formControlName="websiteURL" placeholder="Website URL" class="form-control">
+                        <input
+                          type="text"
+                          formControlName="websiteURL"
+                          placeholder="Website URL"
+                          class="form-control"
+                        />
                       </div>
                       <div class="form-group">
-                        <textarea formControlName="bio" placeholder="Biography" class="form-control" name="" id="" cols="30" rows="6"></textarea>
+                        <textarea
+                          formControlName="bio"
+                          placeholder="Biography"
+                          class="form-control"
+                          name="editor1"
+                          id="editor1"
+                          cols="30"
+                          rows="6"
+                        ></textarea>
                       </div>
                       <div class="form-group d-flex">
-                        <input formControlName="facebook" type="text" placeholder="Facebook" class="form-control mr-1">
-                        <input formControlName="twitter" type="text" placeholder="Twitter" class="form-control ml-1">
+                        <input
+                          formControlName="facebook"
+                          type="text"
+                          placeholder="Facebook"
+                          class="form-control mr-1"
+                        />
+                        <input
+                          formControlName="twitter"
+                          type="text"
+                          placeholder="Twitter"
+                          class="form-control ml-1"
+                        />
                       </div>
                       <div class="form-group d-flex">
-                        <input formControlName="linkedIn" type="text" placeholder="LinkedIn" class="form-control mr-1">
-                        <input formControlName="instagram" type="text" placeholder="Instagram" class="form-control ml-1">
+                        <input
+                          formControlName="linkedIn"
+                          type="text"
+                          placeholder="LinkedIn"
+                          class="form-control mr-1"
+                        />
+                        <input
+                          formControlName="instagram"
+                          type="text"
+                          placeholder="Github"
+                          class="form-control ml-1"
+                        />
+                      </div>
+                      <div
+                        *ngIf="msg"
+                        [class.alert-danger]="msgStatus === 400"
+                        [class.alert-success]="msgStatus === 200"
+                        class="alert text-center"
+                      >
+                        {{ msg }}
                       </div>
                       <div class="form-group">
-                        <button class="btn btn-inverse btn-block rounded">Save changes</button>
+                        <button class="btn btn-inverse btn-block rounded">
+                          Save changes
+                        </button>
                       </div>
                     </form>
                   </div>
 
-                  <div *ngIf="active.toLowerCase() === 'image'" class="edit-profile p-3">
+                  <div
+                    *ngIf="active.toLowerCase() === 'image'"
+                    class="edit-profile p-3"
+                  >
                     <h3 class="py-2">Edit profile image</h3>
                     <form class="row" action="">
                       <div class="edit-profile-img col-md-6">
-                        <img src="{{ img }}" alt="">
+                        <img src="{{ img }}" alt="" />
                       </div>
-                      <input type="file">
+                      <input type="file" />
                     </form>
                   </div>
 
-                  <div *ngIf="active.toLowerCase() === 'skills'" class="edit-profile p-3">
+                  <div
+                    *ngIf="active.toLowerCase() === 'skills'"
+                    class="edit-profile p-3"
+                  >
                     <h3 class="py-2">Edit skills set</h3>
                   </div>
-                  <div *ngIf="active.toLowerCase() === 'password'" class="edit-profile p-3">
+                  <div
+                    *ngIf="active.toLowerCase() === 'password'"
+                    class="edit-profile p-3"
+                  >
                     <h3 class="py-2">Change password</h3>
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </main>
       </div>
     </div>
   </body>
+  <script>
+    CKEDITOR.replace("editor1");
+  </script>
 </html>
-
-
-

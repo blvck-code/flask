@@ -1,10 +1,15 @@
 .login {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   height: 100vh;
   width: 100%;
   overflow: hidden;
+}
+
+.login .alert {
+  width: 40%;
 }
 
 .form-input {
@@ -43,5 +48,3 @@
 .btn-login {
   background: #ff8253;
 }
-
-

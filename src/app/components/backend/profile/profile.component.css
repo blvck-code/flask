@@ -8,7 +8,7 @@
 }
 
 .profile-header,
-.profile-contacts{
+.profile-contacts {
   border-bottom: 1px solid #aaaaaa;
 }
 
@@ -31,18 +31,42 @@
 
 .profile-links-group a.facebook {
   background: #3b599f !important;
+  border: 1px solid #3b599f !important;
+}
+
+.profile-links-group a.facebook:hover {
+  color: #3b599f !important;
+  background: transparent !important;
 }
 
 .profile-links-group a.linkedin {
   background: #0194d7 !important;
+  border: 1px solid #0194d7 !important;
+}
+
+.profile-links-group a.linkedin:hover {
+  color: #0194d7 !important;
+  background: transparent !important;
 }
 
 .profile-links-group a.twitter {
   background: #31cbff !important;
+  border: 1px solid #31cbff !important;
 }
 
-.profile-links-group a.instagram {
-  background: #ff7b6e !important;
+.profile-links-group a.twitter:hover {
+  color: #31cbff !important;
+  background: transparent !important;
+}
+
+.profile-links-group a.github {
+  background: #111 !important;
+  border: 1px solid #111 !important;
+}
+
+.profile-links-group a.github:hover {
+  color: #111 !important;
+  background: transparent !important;
 }
 
 .extra,
@@ -68,13 +92,10 @@
   padding-top: 0 !important;
 }
 
-.edit-profile-img img{
+.edit-profile-img img {
   border-radius: 50%;
   height: 280px;
   width: 280px;
   object-fit: cover;
   border: 2px solid #ffffff;
 }
-
-
-

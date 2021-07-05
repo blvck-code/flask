@@ -14,15 +14,15 @@
 }
 
 .form-control {
-  background: #293647 !important;
+  background: transparent !important;
+  font-family: "Oswald", sans-serif;
+  font-size: 15px;
   color: #fff !important;
 }
 
-.form-control:focus{
-  background: #ced4da !important;
-  color: #1b1e21 !important;
+.form-group small {
+  font-family: "Oswald", sans-serif !important;
 }
-
 
 textarea {
   height: 150px;
@@ -40,16 +40,16 @@ textarea {
   width: 100%;
 }
 
-.contact-item:nth-child(2){
+.contact-item:nth-child(2) {
   border-left: 4px solid #1b1e21;
   border-right: 4px solid #1b1e21;
 }
 
-@media screen and (max-width: 768px){
-  .contact-item:nth-child(2){
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-}
+@media screen and (max-width: 768px) {
+  .contact-item:nth-child(2) {
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+  }
 }
 
 .contact-wrapper {
@@ -94,7 +94,7 @@ textarea {
   background: #1b1e21 !important;
 }
 
-.socials a{
+.socials a {
   min-width: 40px;
   border-radius: 4px;
 }

@@ -1,21 +1,32 @@
 <html>
-
   <body>
     <app-nav></app-nav>
 
     <div style="background: #1b1e21" class="container-fluid">
       <div class="row">
-
-<!--        Start sidebar-->
+        <!--        Start sidebar-->
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
           <app-sidebar></app-sidebar>
         </nav>
 
-<!--        End sidebar-->
+        <!--        End sidebar-->
 
-        <main style="border-top-left-radius: 20px !important; background: #36455a;" role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <main
+          style="border-top-left-radius: 20px !important; background: #36455a"
+          role="main"
+          class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4"
+        >
+          <div
+            class="
+              d-flex
+              justify-content-between
+              flex-wrap flex-md-nowrap
+              align-items-center
+              pb-2
+              mb-3
+              border-bottom
+            "
+          >
             <h2 class="back-title text-capitalize">Experiences</h2>
             <div class="btn-toolbar mb-2 mb-md-0">
               <div class="btn-group mr-2">
@@ -30,34 +41,64 @@
           </div>
           <div>
             <div class="profile py-2">
-              <div class="pb-3 px-3 d-flex justify-content-between align-items-center">
+              <div
+                class="
+                  pb-3
+                  px-3
+                  d-flex
+                  justify-content-between
+                  align-items-center
+                "
+              >
                 <h4 class="back-title text-capitalize">All Experience</h4>
-                <button type="button" data-toggle="modal" data-target="#addExperienceModal" class="btn btn-sm btn-inverse">
+                <button
+                  type="button"
+                  data-toggle="modal"
+                  data-target="#addExperienceModal"
+                  class="btn btn-sm btn-inverse"
+                >
                   Add experience
                 </button>
               </div>
-              <div class="row mx-auto px-3" *ngIf="experiences && experiences.length >= 1">
-                <div *ngFor="let experience of experiences; index as i" (dblclick)="updateExpe(experience)"class="col-lg-4 col-md-6 col-sm-12  my-1 p-2 experience__wrapper">
-                  <div class="experience__item" >
+
+              <div
+                class="row mx-auto px-3"
+                *ngIf="experiences && experiences.length >= 1"
+              >
+                <div
+                  *ngFor="let experience of experiences; index as i"
+                  (dblclick)="updateExpe(experience)"
+                  class="
+                    col-lg-4 col-md-6 col-sm-12
+                    my-1
+                    p-2
+                    experience__wrapper
+                  "
+                >
+                  <div class="experience__item">
                     <span></span>
                     <span></span>
                     <span></span>
                     <span></span>
-                    <h1 class="faded">0{{ i +1 }}</h1>
-                    <h5>{{experience.start }} - {{experience.end}}<small> ({{experience.position}})</small>
+                    <h1 class="faded">0{{ i + 1 }}</h1>
+                    <h5>
+                      {{ experience.start }} - {{ experience.end
+                      }}<small> ({{ experience.position }})</small>
                     </h5>
-                    <h2 class="">{{experience.company}}</h2>
+                    <h2 class="">{{ experience.company }}</h2>
                     <p>{{ experience.desc }}</p>
                     <span></span>
                   </div>
                 </div>
               </div>
-              <div class="row px-3" *ngIf="experiences && experiences.length < 1">
+              <div
+                class="row px-3"
+                *ngIf="experiences && experiences.length < 1"
+              >
                 <p>No experience found</p>
               </div>
             </div>
           </div>
-
         </main>
       </div>
     </div>
@@ -65,59 +106,99 @@
 
   <div id="addExperienceModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
-      <form [formGroup]="expeForm" (ngSubmit)="onSubmit()" class="modal-content">
+      <form
+        [formGroup]="expeForm"
+        (ngSubmit)="onSubmit()"
+        class="modal-content"
+      >
         <div class="modal-header">
-         <h4 class="modal-title back-title">Add experience</h4>
-          <button type="button" data-dismiss="modal" class="close">&times;</button>
+          <h4 class="modal-title back-title">Add experience</h4>
+          <button type="button" data-dismiss="modal" class="close">
+            &times;
+          </button>
         </div>
 
         <div class="modal-body">
           <div class="form-group">
-
-            <input [class.is-invalid]="getCompany?.invalid && getCompany?.touched"  formControlName="company" placeholder="Company *" type="text" class="form-control form-control-sm">
+            <input
+              [class.is-invalid]="getCompany?.invalid && getCompany?.touched"
+              formControlName="company"
+              placeholder="Company *"
+              type="text"
+              class="form-control form-control-sm"
+            />
             <div *ngIf="getCompany?.invalid && getCompany?.touched">
               <small *ngIf="getCompany?.errors?.required" class="text-danger">
                 Company is required
               </small>
             </div>
-
           </div>
 
           <div class="form-group">
-
-            <input [class.is-invalid]="getJob?.invalid && getJob?.touched"  formControlName="job" placeholder="Job position *" type="text" class="form-control form-control-sm">
+            <input
+              [class.is-invalid]="getJob?.invalid && getJob?.touched"
+              formControlName="job"
+              placeholder="Job position *"
+              type="text"
+              class="form-control form-control-sm"
+            />
             <div *ngIf="getJob?.invalid && getJob?.touched">
               <small *ngIf="getJob?.errors?.required" class="text-danger">
                 Job title is required
               </small>
             </div>
-
           </div>
 
-           <div class="form-group d-flex align-items-center justify-content-between">
-             <input [class.is-invalid]="getStart?.invalid && getStart?.touched" formControlName="start"  placeholder="Start year *" type="text" class="form-control form-control-sm mr-1">
-             <input [class.is-invalid]="getEnd?.invalid && getEnd?.touched"  formControlName="end"  placeholder="End year *" type="text" class="form-control form-control-sm ml-1">
+          <div
+            class="form-group d-flex align-items-center justify-content-between"
+          >
+            <input
+              [class.is-invalid]="getStart?.invalid && getStart?.touched"
+              formControlName="start"
+              placeholder="Start year *"
+              type="text"
+              class="form-control form-control-sm mr-1"
+            />
+            <input
+              [class.is-invalid]="getEnd?.invalid && getEnd?.touched"
+              formControlName="end"
+              placeholder="End year *"
+              type="text"
+              class="form-control form-control-sm ml-1"
+            />
           </div>
 
           <div class="form-group">
-            <textarea [class.is-invalid]="getDesc?.invalid && getDesc?.touched"  formControlName="desc" placeholder="Description..." class="form-control form-control-sm" name="" id="" cols="30" rows="10"></textarea>
+            <textarea
+              [class.is-invalid]="getDesc?.invalid && getDesc?.touched"
+              formControlName="desc"
+              placeholder="Description..."
+              class="form-control form-control-sm"
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+            ></textarea>
             <div *ngIf="getDesc?.invalid && getDesc?.touched">
               <small *ngIf="getJob?.errors?.required" class="text-danger">
                 Job description is required
               </small>
             </div>
           </div>
-
         </div>
         <div class="modal-footer d-flex align-items-center">
-          <button [disabled]="!expeForm.valid" type="submit" class="btn btn-sm btn-inverse mr-1">Add experience</button>
-          <button data-dismiss="modal"  class="btn btn-sm btn-warning">Cancel</button>
+          <button
+            [disabled]="!expeForm.valid"
+            type="submit"
+            class="btn btn-sm btn-inverse mr-1"
+          >
+            Add experience
+          </button>
+          <button data-dismiss="modal" class="btn btn-sm btn-warning">
+            Cancel
+          </button>
         </div>
       </form>
     </div>
   </div>
-
 </html>
-
-
-

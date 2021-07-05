@@ -1,177 +1,306 @@
 <html>
+  <body>
+    <app-nav></app-nav>
 
-<body>
-<app-nav></app-nav>
+    <div style="background: #1b1e21" class="container-fluid">
+      <div class="row">
+        <!--        Start sidebar-->
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <app-sidebar></app-sidebar>
+        </nav>
 
-<div style="background: #1b1e21" class="container-fluid">
-  <div class="row">
+        <!--        End sidebar-->
 
-    <!--        Start sidebar-->
-    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-      <app-sidebar></app-sidebar>
-    </nav>
-
-    <!--        End sidebar-->
-
-    <main style="background: #36455a;" role="main" class="col-md-9 ml-sm-auto col-lg-10 p-0 m-0">
-
-      <!--          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">-->
-      <!--            <h2 class="back-title">Messages - {{ category | titlecase }}</h2>-->
-      <!--            <div class="btn-toolbar mb-2 mb-md-0">-->
-      <!--              <div class="btn-group mr-2">-->
-      <!--                <button class="btn btn-sm btn-outline-secondary">Share</button>-->
-      <!--                <button class="btn btn-sm btn-outline-secondary">Export</button>-->
-      <!--              </div>-->
-      <!--              <button class="btn btn-sm btn-outline-secondary dropdown-toggle">-->
-      <!--                <span data-feather="calendar"></span>-->
-      <!--                This week-->
-      <!--              </button>-->
-      <!--            </div>-->
-      <!--          </div>-->
-      <div>
-        <div class="container p-0 m-0">
-          <div class="row messages-container p-0 m-0">
-            <div class="col-md-2 p-0 messages-category">
-              <h4 class="text-uppercase p-3">messages</h4>
-              <div class="messages-category-mains sidebar-sticky">
-                <ul class="nav flex-column">
-                  <li class="nav-item">
-                    <a class="nav-link active d-flex align-items-center justify-content-between">
+        <main
+          style="background: #36455a"
+          role="main"
+          class="col-md-9 ml-sm-auto col-lg-10 p-0 m-0"
+        >
+          <!--          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">-->
+          <!--            <h2 class="back-title">Messages - {{ category | titlecase }}</h2>-->
+          <!--            <div class="btn-toolbar mb-2 mb-md-0">-->
+          <!--              <div class="btn-group mr-2">-->
+          <!--                <button class="btn btn-sm btn-outline-secondary">Share</button>-->
+          <!--                <button class="btn btn-sm btn-outline-secondary">Export</button>-->
+          <!--              </div>-->
+          <!--              <button class="btn btn-sm btn-outline-secondary dropdown-toggle">-->
+          <!--                <span data-feather="calendar"></span>-->
+          <!--                This week-->
+          <!--              </button>-->
+          <!--            </div>-->
+          <!--          </div>-->
+          <div>
+            <div class="container p-0 m-0">
+              <div class="row messages-container p-0 m-0">
+                <div class="col-md-2 p-0 messages-category">
+                  <h4 class="text-uppercase p-3">messages</h4>
+                  <div class="messages-category-mains sidebar-sticky">
+                    <ul class="nav flex-column">
+                      <li class="nav-item">
+                        <a
+                          class="
+                            nav-link
+                            active
+                            d-flex
+                            align-items-center
+                            justify-content-between
+                          "
+                        >
                           <span>
                             <i class="fa fa-inbox mr-2"></i>
                             Inbox
                           </span>
                           <span>234</span>
-                      <span class="badge badge-success"></span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center justify-content-between">
+                          <span class="badge badge-success"></span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a
+                          class="
+                            nav-link
+                            d-flex
+                            align-items-center
+                            justify-content-between
+                          "
+                        >
                           <span>
                             <i class="fa fa-send-o mr-2"></i>
                             Sent
                           </span>
-                      <span>234</span>
-                    </a>
-                  </li>
-                  <li class="nav-item mb-1">
-                    <a class="nav-link d-flex align-items-center justify-content-between">
+                          <span>234</span>
+                        </a>
+                      </li>
+                      <li class="nav-item mb-1">
+                        <a
+                          class="
+                            nav-link
+                            d-flex
+                            align-items-center
+                            justify-content-between
+                          "
+                        >
                           <span>
                             <i class="fa fa-history mr-2"></i>
                             Send Later
                           </span>
-                      <span>3</span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center justify-content-between">
+                          <span>3</span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a
+                          class="
+                            nav-link
+                            d-flex
+                            align-items-center
+                            justify-content-between
+                          "
+                        >
                           <span>
                             <i class="fa fa-pencil mr-2"></i>
                             Draft
                           </span>
-                      <span>36</span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center justify-content-between">
+                          <span>36</span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a
+                          class="
+                            nav-link
+                            d-flex
+                            align-items-center
+                            justify-content-between
+                          "
+                        >
                           <span>
                             <i class="fa fa-star-o mr-2"></i>
                             Starred
                           </span>
-                      <span>1</span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center justify-content-between">
+                          <span>1</span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a
+                          class="
+                            nav-link
+                            d-flex
+                            align-items-center
+                            justify-content-between
+                          "
+                        >
                           <span>
                             <i class="fa fa-trash-o mr-2"></i>
                             Trash
                           </span>
-                      <span>1100</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div style="border-right: 2px solid #293647;" class="col-md-4 messages">
-              <div class="messages-top p-3">
-                <div class="form-group">
-                  <input type="text" placeholder="Search" class="form-control-sm text-center form-control">
-                </div>
-                <h4 class="text-capitalize">Inbox</h4>
-              </div>
-              <cdk-virtual-scroll-viewport *ngIf="messages && messages.length"  itemSize="100" class="messages-wrapper">
-                <div (click)="setActive(message)" [class.active]="activeMsg && activeMsg.id === message.id" *cdkVirtualFor="let message of messages" class="message pl-1 pr-2 my-1 py-2 d-flex align-items-center row">
-                  <div class="message-thumb col-md-3">
-                    <img src="{{ img }}" alt="">
+                          <span>1100</span>
+                        </a>
+                      </li>
+                    </ul>
                   </div>
-                  <div class="message-content px-0 col-md-9">
-                    <div class="message-top py-0 my0 d-flex align-items-center justify-content-between">
-                      <p>{{ message.sender_name}}</p>
-                      <small>6:20pm</small>
+                </div>
+                <div
+                  style="border-right: 2px solid #293647"
+                  class="col-md-4 messages"
+                >
+                  <div class="messages-top p-3">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        placeholder="Search"
+                        class="form-control-sm text-center form-control"
+                      />
                     </div>
-                    <p class="message-title my-0 py0">
-                      {{ message.subject }}
-                    </p>
-                    <p class="message-desc">
-                      Lorem ipsum dolor sit amet,
-                      consectetur adipisicing elit.
-                      Ad at debitis, deleniti facilis...
-                    </p>
+                    <h4 class="text-capitalize">Inbox</h4>
                   </div>
+                  <cdk-virtual-scroll-viewport
+                    *ngIf="messages && messages.length"
+                    itemSize="100"
+                    class="messages-wrapper"
+                  >
+                    <div
+                      (click)="setActive(message)"
+                      [class.active]="activeMsg && activeMsg.id === message.id"
+                      *cdkVirtualFor="let message of messages"
+                      class="
+                        message
+                        pl-1
+                        pr-2
+                        my-1
+                        py-2
+                        d-flex
+                        align-items-center
+                        row
+                      "
+                    >
+                      <div class="message-thumb col-md-3">
+                        <img src="{{ img }}" alt="" />
+                      </div>
+                      <div class="message-content px-0 col-md-9">
+                        <div
+                          class="
+                            message-top
+                            py-0
+                            my0
+                            d-flex
+                            align-items-center
+                            justify-content-between
+                          "
+                        >
+                          <p class="text-capitalize">
+                            {{ message.sender_name }}
+                          </p>
+                          <small>{{
+                            message.timestamp | date: "fullDate"
+                          }}</small>
+                        </div>
+                        <p class="message-title my-0 text-capitalize py0">
+                          {{ message.subject }}
+                        </p>
+                        <p class="message-desc">
+                          Lorem ipsum dolor sit amet, consectetur adipisicing
+                          elit. Ad at debitis, deleniti facilis...
+                        </p>
+                      </div>
+                    </div>
+                  </cdk-virtual-scroll-viewport>
                 </div>
-              </cdk-virtual-scroll-viewport>
-            </div>
-            <div *ngIf="activeMsg" class="col-md-6 message-content px-3 py-3">
-              <div class="message-content-title px-3">
-                <div class="title-icons py-2 d-flex align-items-center justify-content-start">
-                  <i class="fa fa-inbox mr-4"></i>
-                  <i class="fa fa-list mr-4"></i>
-                  <i class="fa fa-clock-o mr-4"></i>
-                  <i class="fa fa-star-o mr-4"></i>
-                  <i class="fa fa-trash-o mr-4"></i>
-                </div>
-                <h3 class="py-3">{{ activeMsg.subject }}</h3>
-              </div>
-              <div class="message-content-body px-3">
-                <div class="message-sender border-bottom d-flex align-items-end justify-content-between">
-                  <div class="d-flex flex-column">
-                    <span class="py-0">{{ activeMsg.sender_name }}</span>
-                    <a style="font-size: 14px; font-family: Roboto" href="mailTo:maurice@email.com">{{ activeMsg.sender_email }}</a>
+                <div
+                  *ngIf="activeMsg"
+                  class="col-md-6 message-content px-3 py-3"
+                >
+                  <div class="message-content-title px-3">
+                    <div
+                      class="
+                        title-icons
+                        py-2
+                        d-flex
+                        align-items-center
+                        justify-content-start
+                      "
+                    >
+                      <i class="fa fa-inbox mr-4"></i>
+                      <i class="fa fa-list mr-4"></i>
+                      <i class="fa fa-clock-o mr-4"></i>
+                      <i class="fa fa-star-o mr-4"></i>
+                      <i class="fa fa-trash-o mr-4"></i>
+                    </div>
+                    <h3 class="py-3 text-capitalize">
+                      {{ activeMsg.subject }}
+                    </h3>
                   </div>
-                  <small>{{ activeMsg.date }}</small>
-                </div>
-                <div class="py-3">
-                  <p style="font-size: 15px;">
-                    {{ activeMsg.message }}
-                  </p>
-                </div>
-              </div>
-              <div class="message-content-reply px-3">
-                <div class="form-group">
-                  <label style="font-size: 14px; color: #aaaaaa" class="pb-2">Reply</label>
-                  <textarea class="form-control" name="" id="" cols="30" rows="5"></textarea>
-                </div>
-                <div class="content-reply-footer pt-3 d-flex align-items-center justify-content-between">
-                  <div class="d-flex align-items-center">
-                    <i class="fa fa-trash-o mr-3"></i>
-                    <i class="fa fa-paperclip"></i>
+                  <div class="message-content-body px-3">
+                    <div
+                      class="
+                        message-sender
+                        border-bottom
+                        d-flex
+                        align-items-end
+                        justify-content-between
+                      "
+                    >
+                      <div class="d-flex flex-column">
+                        <span class="py-0 text-capitalize">{{
+                          activeMsg.sender_name
+                        }}</span>
+                        <a
+                          style="font-size: 14px; font-family: Roboto"
+                          href="mailTo:{{ activeMsg.sender_email }}"
+                          >{{ activeMsg.sender_email }}</a
+                        >
+                      </div>
+                      <small>{{
+                        activeMsg.timestamp | date: "fullDate"
+                      }}</small>
+                    </div>
+                    <div class="py-3">
+                      <p style="font-size: 15px">
+                        {{ activeMsg.message }}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <button class="btn btn-sm btn-secondary rounded mr-1">Send Later</button>
-                    <button class="btn btn-sm btn-primary rounded ml-1">Send</button>
+                  <div class="message-content-reply px-3">
+                    <div class="form-group">
+                      <label
+                        style="font-size: 14px; color: #aaaaaa"
+                        class="pb-2"
+                        >Reply</label
+                      >
+                      <textarea
+                        class="form-control"
+                        name=""
+                        id=""
+                        cols="30"
+                        rows="5"
+                      ></textarea>
+                    </div>
+                    <div
+                      class="
+                        content-reply-footer
+                        pt-3
+                        d-flex
+                        align-items-center
+                        justify-content-between
+                      "
+                    >
+                      <div class="d-flex align-items-center">
+                        <i class="fa fa-trash-o mr-3"></i>
+                        <i class="fa fa-paperclip"></i>
+                      </div>
+                      <div>
+                        <button class="btn btn-sm btn-secondary rounded mr-1">
+                          Send Later
+                        </button>
+                        <button class="btn btn-sm btn-primary rounded ml-1">
+                          Send
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </main>
       </div>
-    </main>
-  </div>
-</div>
-</body>
+    </div>
+  </body>
 </html>
-
-
-

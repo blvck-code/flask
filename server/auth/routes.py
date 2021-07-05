@@ -83,57 +83,58 @@ class LoginAPI(MethodView):
       }
       return make_response(jsonify(responseObject)), 401
 
-class UserAPI(MethodView):
+class UserAPI(MethodView): 
   def get(self):
-    auth_header = request.headers.get('Authorization')
-    if auth_header:
-      try:
-        auth_token = auth_header.split(" ")[1]
-      except IndexError:
-        responseObject = {
-          'status': 'fail',
-          'message': 'Bearer token malformed'
-        }
-        return make_response(jsonify(responseObject)), 401
-    else:
-      auth_token = ''
-    if auth_token:
-      resp = decode_token(auth_token)
-      print(resp)
-      if not isinstance(resp, str):
-        user = Auth.query.filter_by(id=resp['sub']).first()
-        responseObject= {
-          'status': 'success',
-          'data': {
-            'user_id': user.id,
-            'email': user.email,
-            'first_name': user.first_name,
-            'last_name': user.last_name,
-            'phone': user.phone,
-            'country': user.country,
-            'date_of_birth': user.date_of_birth,
-            'website_url': user.website_url,
-            'bio': user.bio,
-            'image_file': user.image_file,
-            'facebook': user.facebook,
-            'twitter': user.twitter,
-            'linkedin': user.linkedin,
-            'instagram': user.instagram,
-          }
-        }
-        return make_response(jsonify(responseObject)), 200
-      else:
-        responseObject= {
-          'status': 'fail',
-          'message': resp
-        }
-        return make_response(jsonify(responseObject)), 401
-    else:
-      responseObject= {
-        'status': 'fail',
-        'message': 'Provide a valid auth token'
-      }
-      return make_response(jsonify(responseObject)), 401
+    return make_response(jsonify({'msg': 123}))
+    # auth_header = request.headers.get('Authorization')
+    # if auth_header:
+    #   try:
+    #     auth_token = auth_header.split(" ")[1]
+    #   except IndexError:
+    #     responseObject = {
+    #       'status': 'fail',
+    #       'message': 'Bearer token malformed'
+    #     }
+    #     return make_response(jsonify(responseObject)), 401
+    # else:
+    #   auth_token = ''
+    # if auth_token:
+    #   resp = decode_token(auth_token)
+    #   print(resp)
+    #   if not isinstance(resp, str):
+    #     user = Auth.query.filter_by(id=resp['sub']).first()
+    #     responseObject= {
+    #       'status': 'success',
+    #       'data': {
+    #         'user_id': user.id,
+    #         'email': user.email,
+    #         'first_name': user.first_name,
+    #         'last_name': user.last_name,
+    #         'phone': user.phone,
+    #         'country': user.country,
+    #         'date_of_birth': user.date_of_birth,
+    #         'website_url': user.website_url,
+    #         'bio': user.bio,
+    #         'image_file': user.image_file,
+    #         'facebook': user.facebook,
+    #         'twitter': user.twitter,
+    #         'linkedin': user.linkedin,
+    #         'instagram': user.instagram,
+    #       }
+    #     }
+    #     return make_response(jsonify(responseObject)), 200
+    #   else:
+    #     responseObject= {
+    #       'status': 'fail',
+    #       'message': resp
+    #     }
+    #     return make_response(jsonify(responseObject)), 401
+    # else:
+    #   responseObject= {
+    #     'status': 'fail',
+    #     'message': 'Provide a valid auth token'
+    #   }
+    #   return make_response(jsonify(responseObject)), 401
 
 class UpdateProfile(MethodView):
   @cross_origin()
@@ -222,6 +223,7 @@ class UpdateProfile(MethodView):
       return make_response(jsonify(responseObject)), 401
 
 class ProfileAPI(MethodView):
+  @cross_origin()
   def get(self):
     user = Auth.query.filter_by(id=1).first()
     if user:

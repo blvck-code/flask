@@ -16,7 +16,12 @@ section {
   min-height: 90vh;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Oswald", sans-serif;
   letter-spacing: 1px;
   font-weight: 300;
@@ -27,14 +32,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a,
-a:hover{
+a:hover {
   color: #ffffff;
   text-decoration: none;
 }
 
-nav{
-  background: #1b1e21 !important;
-  z-index: 10;
+nav {
+  background: rgba(0, 0, 0, 0.5) !important;
+  z-index: 10 !important;
+}
+
+nav .nav-link {
+  font-size: 16px;
+  font-weight: normal !important;
+  margin: 2px 3px !important;
+  background: #f1f1f154;
+  padding: 8px 25px !important;
+  border-radius: 100vw;
+  z-index: 10 !important;
 }
 
 img {
@@ -53,6 +68,67 @@ img {
 
 .back-title span {
   font-weight: 300;
+}
+
+.fancy-link-two {
+  font-size: 15px;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 1px;
+  font-weight: 200;
+  position: relative !important;
+  text-transform: uppercase;
+  padding: 14px 10px;
+  letter-spacing: 3px !important;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.fancy-link-two::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  content: "";
+  width: 100%;
+  background: #111 !important;
+  z-index: -1;
+
+  transition: transform 250ms ease-in-out;
+  transform: scaleX(0.4);
+  transform-origin: left;
+}
+
+.fancy-link-two:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.fancy-link-one {
+  font-size: 25px;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 1px;
+  font-weight: 300;
+  position: relative;
+}
+
+.fancy-link-one::after {
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  height: 2px;
+  content: "";
+  width: 100%;
+  background: #111;
+  border-radius: 4px;
+
+  transition: transform 250ms ease-in-out;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+.fancy-link-one:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .profile-wrapper {
@@ -89,7 +165,7 @@ img {
 }
 
 .modal-content {
-    background: #36455a;
+  background: #36455a;
 }
 
 .btn {
@@ -116,7 +192,7 @@ img {
 .btn-secondary:hover {
   background: transparent !important;
   color: #868e96 !important;
-  border: 1px solid #868e96  !important;
+  border: 1px solid #868e96 !important;
 }
 
 .btn-primary {
@@ -128,7 +204,7 @@ img {
 .btn-primary:hover {
   background: transparent !important;
   color: #1d8dff !important;
-  border: 1px solid #1d8dff  !important;
+  border: 1px solid #1d8dff !important;
 }
 
 .btn-info {
@@ -140,7 +216,7 @@ img {
 .btn-info:hover {
   background: transparent !important;
   color: #4ebfbb !important;
-  border: 1px solid #4ebfbb  !important;
+  border: 1px solid #4ebfbb !important;
 }
 
 .btn-success {
@@ -151,7 +227,7 @@ img {
 
 .btn-success:hover {
   background: transparent !important;
-  color: #61d85e  !important;
+  color: #61d85e !important;
   border: 1px solid #61d85e !important;
 }
 
@@ -163,7 +239,7 @@ img {
 
 .btn-warning:hover {
   background: transparent !important;
-  color: #fdd468  !important;
+  color: #fdd468 !important;
   border: 1px solid #fdd468 !important;
 }
 
@@ -199,8 +275,8 @@ img {
 
 .btn-inverse:hover {
   background: transparent !important;
-  color: #f8f8f8  !important;
-  border: 1px solid #f8f8f8  !important;
+  color: #f8f8f8 !important;
+  border: 1px solid #f8f8f8 !important;
 }
 
 p {
@@ -229,6 +305,7 @@ p {
 
 .alert-danger {
   background: #ff8253 !important;
+  font-weight: 400;
 }
 
 .alert-info {
@@ -262,24 +339,24 @@ p {
 }
 
 .badge-success {
-    background: #61d85e;
+  background: #61d85e;
 }
 
 .badge-primary {
-    background: #1d8dff;
-    color: #ffffff;
+  background: #1d8dff;
+  color: #ffffff;
 }
 
 .badge-warning {
-    background: #fdd468;
+  background: #fdd468;
 }
 
 .badge-inverse {
-    background: #f8f8f8;
+  background: #f8f8f8;
 }
 
 .form-control {
-    border-radius: 0 !important;
+  border-radius: 0 !important;
 }
 
 /*.form-control:focus{*/
@@ -288,7 +365,7 @@ p {
 /*}*/
 
 input,
-textarea{
+textarea {
   background: #222d3c !important;
   border-radius: 0 !important;
   color: #fff !important;

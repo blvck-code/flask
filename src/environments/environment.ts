@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseURL: 'http://localhost:5000/api'
+  baseURL: 'https://brianoluoch.herokuapp.com/api'
+  // baseURL: 'http://localhost:5000/api'
 };
 
 /*

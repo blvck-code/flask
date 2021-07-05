@@ -1,0 +1,55 @@
+.articles-list {
+  max-width: 1300px;
+}
+
+.articles-item-wrapper {
+  background: #222d3c;
+}
+
+.articles-item-img {
+  height: 200px;
+  padding: 0;
+  position: relative;
+}
+
+.articles-item-info {
+  min-height: 220px;
+  position: relative;
+}
+
+.article-author {
+  font-size: 13px;
+  color: #aaa;
+}
+
+.articles-item-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.articles-item-info-header {
+  position: relative;
+}
+
+.article-date {
+  position: absolute;
+  top: -40px;
+  right: 15px;
+  z-index: 1;
+  background: #36455a9f;
+}
+
+.article-date div {
+  background: #151f2c;
+}
+
+.article-date .day {
+  font-size: 17px !important;
+  font-weight: 400;
+}
+
+.article-date .month {
+  font-size: 12px !important;
+  letter-spacing: 0.2px !important;
+}

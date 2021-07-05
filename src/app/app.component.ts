@@ -7,7 +7,7 @@ import { trigger, transition, group, query, style, animate } from "@angular/anim
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  topics = ['Angular', 'React', 'Vue'];
+
 
 }
 

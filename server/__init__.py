@@ -6,6 +6,9 @@ from flask_jwt_extended import JWTManager
 from flask_cors import CORS
 from flask_marshmallow import Marshmallow
 from server.config import DevelopmentConfig
+from flask_rest_paginate import Pagination
+from flask_restful import Api
+
 
 app = Flask(__name__)
 app.config.from_object(DevelopmentConfig)
@@ -15,22 +18,28 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 app.config['SECRET_KEY'] = 'bf13b0dbb018ff4c5f905d3329996c3e'
 app.config['JWT_SECRET_KEY'] = 'bf13b0dbb018ff4c5f905d3329996c3e'
 app.config['CORS_HEADERS'] = 'Content-Type'
+app.config['PAGINATE_PAGINATION_OBJECT_KEY'] = None
+
 
 login_manager = LoginManager(app)
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 jwt = JWTManager(app)
 ma = Marshmallow(app)
+pagination = Pagination(app, db)
+api = Api(app)
 
 from server.auth.routes import auth_blueprint
 from server.dashboard.routes import dashboard_blueprint
 from server.experience.routes import experience_blueprint
 from server.messages.routes import messages_blueprint
+from server.articles.routes import articles_blueprint
 
 app.register_blueprint(auth_blueprint)
 app.register_blueprint(dashboard_blueprint)
 app.register_blueprint(experience_blueprint)
 app.register_blueprint(messages_blueprint)
+app.register_blueprint(articles_blueprint)
 
 
 # def create_app(config_class=DevelopmentConfig):
