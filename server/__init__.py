@@ -13,8 +13,6 @@ from flask_restful import Api
 
 app = Flask(__name__)
 UPLOAD_FOLDER = './uploads'
-app.config.from_object(DevelopmentConfig)
-CORS(app, origins="*", headers=['Content-Type', 'Authorization'], expose_headers='Authorization')
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 app.config['SECRET_KEY'] = 'bf13b0dbb018ff4c5f905d3329996c3e'
@@ -41,46 +39,48 @@ firebase = pyrebase.initialize_app(config)
 storage = firebase.storage()
 
 
-login_manager = LoginManager(app)
-db = SQLAlchemy(app)
-bcrypt = Bcrypt(app)
-jwt = JWTManager(app)
-ma = Marshmallow(app)
-pagination = Pagination(app, db)
-api = Api(app)
+login_manager = LoginManager()
+db = SQLAlchemy()
+bcrypt = Bcrypt()
+jwt = JWTManager()
+ma = Marshmallow()
+pagination = Pagination()
+api = Api()
 
-from server.auth.routes import auth_blueprint
-from server.dashboard.routes import dashboard_blueprint
-from server.experience.routes import experience_blueprint
-from server.messages.routes import messages_blueprint
-from server.articles.routes import articles_blueprint
+# from server.auth.routes import auth_blueprint
+# from server.dashboard.routes import dashboard_blueprint
+# from server.experience.routes import experience_blueprint
+# from server.messages.routes import messages_blueprint
+# from server.articles.routes import articles_blueprint
+#
+# app.register_blueprint(auth_blueprint)
+# app.register_blueprint(dashboard_blueprint)
+# app.register_blueprint(experience_blueprint)
+# app.register_blueprint(messages_blueprint)
+# app.register_blueprint(articles_blueprint)
 
-app.register_blueprint(auth_blueprint)
-app.register_blueprint(dashboard_blueprint)
-app.register_blueprint(experience_blueprint)
-app.register_blueprint(messages_blueprint)
-app.register_blueprint(articles_blueprint)
 
+def create_app(config_class=DevelopmentConfig):
+  app = Flask(__name__)
+  app.config.from_object(DevelopmentConfig)
+  CORS(app, origins="*", headers=['Content-Type', 'Authorization'], expose_headers='Authorization')
 
-# def create_app(config_class=DevelopmentConfig):
-#   app = Flask(__name__)
-#   app.config.from_object(DevelopmentConfig)
-#   CORS(app, origins="*", headers=['Content-Type', 'Authorization'], expose_headers='Authorization')
-#
-#   db.init_app(app)
-#   login_manager.init_app(app)
-#   bcrypt.init_app(app)
-#   jwt.init_app(app)
-#   ma.init_app(app)
-#
-#   from server.auth.routes import auth_blueprint
-#   from server.dashboard.routes import dashboard_blueprint
-#   from server.experience.routes import experience_blueprint
-#
-#   app.register_blueprint(auth_blueprint)
-#   app.register_blueprint(dashboard_blueprint)
-#   app.register_blueprint(experience_blueprint)
-#
-#   return app
+  db.init_app(app)
+  login_manager.init_app(app)
+  bcrypt.init_app(app)
+  jwt.init_app(app)
+  ma.init_app(app)
+  api.init_app(app)
+  pagination.init_app(app, db)
+
+  from server.auth.routes import auth_blueprint
+  from server.dashboard.routes import dashboard_blueprint
+  from server.experience.routes import experience_blueprint
+
+  app.register_blueprint(auth_blueprint)
+  app.register_blueprint(dashboard_blueprint)
+  app.register_blueprint(experience_blueprint)
+
+  return app
 
 
