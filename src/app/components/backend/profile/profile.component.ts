@@ -4,7 +4,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../../services/auth/auth.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-profile',
@@ -20,6 +19,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
   private 'profileSub': Subscription;
   public msg: string = '';
   public msgStatus: any;
+
 
   constructor(
     private _router: Router,
@@ -42,6 +42,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
     instagram: ['', [Validators.required]],
     twitter: ['Twitter', [Validators.required]],
   });
+
 
   ngOnInit(): void {
     this._authService.getUser().subscribe((res) => {

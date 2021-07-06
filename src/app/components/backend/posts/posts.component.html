@@ -30,20 +30,52 @@
           </div>
           <div>
             <div class="profile py-2">
-              <div *ngIf="!addPost" class="pb-3 d-flex justify-content-between align-items-center">
-                <h4 class="back-title text-capitalize">All Posts</h4>
-                <button (click)="addPostMode()" type="button" data-toggle="modal" class="btn btn-sm btn-success">
-                  Add new post
-                </button>
-              </div>
               <div *ngIf="addPost" class="pb-3 d-flex justify-content-between align-items-center">
-                <h4 class="back-title text-capitalize">Add new post</h4>
-                <button (click)="addPostMode()" type="button" data-toggle="modal" class="btn btn-sm btn-inverse">
-                  Go Back
+                <h4 class="back-title text-capitalize">All Articles</h4>
+                <button (click)="addPostMode()" type="button" data-toggle="modal" class="btn btn-sm btn-success">
+                  Add new article
                 </button>
               </div>
+
+
+              <div *ngIf="!addPost" class="pb-3 row">
+                <div class="add-post__header col-10 mx-auto d-flex justify-content-between align-items-center">
+                  <h4 class="back-title text-capitalize">Add new article</h4>
+                  <button (click)="addPostMode()" type="button" data-toggle="modal" class="btn btn-sm btn-inverse">
+                    Go Back
+                  </button>
+                </div>
+                <div class="add-post__wrapper rounded col-10 mx-auto my-2 p-3">
+
+                  <form [formGroup]="articleForm" (submit)="addArticle()" action="">
+                    <div (click)="fileInput.click()" class="add-post__cover my-2">
+                      <span *ngIf="!imagePreview">Click here to add article image</span>
+                      <input (change)="onFileSelect($event)" (change)="handleImg($event)" style="display: none" #fileInput type="file">
+                      <img *ngIf="imagePreview" src="{{imagePreview}}" alt="">
+                    </div>
+                    <div class="form-group py-2">
+                      <h5>Article Title</h5>
+                      <input formControlName="title" type="text" id="title" class="form-control">
+                    </div>
+
+                    <div class="form-group py-2">
+                      <h5>Article Body</h5>
+                      <textarea formControlName="body" id="" cols="30" rows="10" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <button class="btn btn-secondary mr-1">Post later</button>
+                      <button type="submit" class="btn btn-primary ml-1">Post now</button>
+                    </div>
+
+                  </form>
+
+                </div>
+              </div>
+
+
               <div class="row">
-                <div *ngIf="!addPost" class="col-md-12">
+                <div *ngIf="addPost" class="col-md-12">
                   <mat-spinner *ngIf="loading" color="primary"></mat-spinner>
                   <div *ngIf="!loading" class="posts">
                     <div class="post">

@@ -31,6 +31,10 @@ export class ArcticlesListComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  truncate(title:string){
+    return title.split(" ").splice(0,10).join(" ")
+  }
+
   onScroll() {
     if (this.notEmptyPost && this.notScrolly) {
       this.page += 1;

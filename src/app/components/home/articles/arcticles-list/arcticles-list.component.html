@@ -16,7 +16,7 @@
         >
           <div class="articles-item-wrapper">
             <div class="articles-item-img">
-              <img src="{{ image }}/{{ article.cover }}" alt="" />
+              <img src="{{ image }}/{{ article.cover }}" alt=""/>
             </div>
             <div
               class="
@@ -45,13 +45,13 @@
               </div>
               <div class="article-title py-2">
                 <h4 class="text-capitalize">
-                  {{ article.title }}
+                  {{ truncate(article.title )}}
                 </h4>
               </div>
               <a
                 (click)="navigateArticleDetail(article)"
                 class="fancy-link-two mt-4"
-                >read more</a
+              >read more</a
               >
             </div>
           </div>

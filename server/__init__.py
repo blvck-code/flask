@@ -1,3 +1,4 @@
+import pyrebase
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
@@ -11,6 +12,7 @@ from flask_restful import Api
 
 
 app = Flask(__name__)
+UPLOAD_FOLDER = './uploads'
 app.config.from_object(DevelopmentConfig)
 CORS(app, origins="*", headers=['Content-Type', 'Authorization'], expose_headers='Authorization')
 
@@ -19,6 +21,24 @@ app.config['SECRET_KEY'] = 'bf13b0dbb018ff4c5f905d3329996c3e'
 app.config['JWT_SECRET_KEY'] = 'bf13b0dbb018ff4c5f905d3329996c3e'
 app.config['CORS_HEADERS'] = 'Content-Type'
 app.config['PAGINATE_PAGINATION_OBJECT_KEY'] = None
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+config = {
+  "apiKey": "AIzaSyACQIVjk7HzgsBmVsHrJvXPpVQrnf9cRJw",
+  "authDomain": "portfolio-bd187.firebaseapp.com",
+  "databaseURL": "https://portfolio-bd187.firebaseio.com",
+  "projectId": "portfolio-bd187",
+  "storageBucket": "portfolio-bd187.appspot.com",
+  "messagingSenderId": "234999340512",
+  "appId": "1:234999340512:web:98d494e6cd624744c95f85",
+  "measurementId": "G-ZCJFNMGLE0",
+  "serviceAccount": "./keyfile.json"
+}
+
+#init firebase app
+firebase = pyrebase.initialize_app(config)
+#firebase storage
+storage = firebase.storage()
 
 
 login_manager = LoginManager(app)

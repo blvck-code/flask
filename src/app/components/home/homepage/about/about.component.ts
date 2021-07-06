@@ -25,6 +25,10 @@ export class AboutComponent implements OnInit, OnDestroy {
       .subscribe((res) => (this.profile = res));
   }
 
+  handleAbout(about: string){
+
+  }
+
   ngOnDestroy(): void {
     if (this.subProfile) {
       this.subProfile.unsubscribe();

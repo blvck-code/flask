@@ -1,1 +1,15 @@
 
+nav {
+  background: rgba(0, 0, 0, 0.5) !important;
+  z-index: 10 !important;
+}
+
+nav .nav-link {
+  font-size: 16px;
+  font-weight: normal !important;
+  margin: 2px 3px !important;
+  background: #f1f1f154;
+  padding: 8px 25px !important;
+  border-radius: 100vw;
+  z-index: 10 !important;
+}

@@ -42,7 +42,6 @@ class ListMessageAPI(MethodView):
     subject_raw = post_data.get('subject', None)
     message_raw = post_data.get('message', None)
     
-
     try:
       sender_name = sender_name_raw.lower()
       sender_email = sender_email_raw.lower()
