@@ -34,9 +34,11 @@ config = {
 }
 
 #init firebase app
-firebase = pyrebase.initialize_app(config)
+
+# @todo ====> update firebase
+# firebase = pyrebase.initialize_app(config)
 #firebase storage
-storage = firebase.storage()
+# storage = firebase.storage()
 
 
 login_manager = LoginManager()
@@ -76,10 +78,14 @@ def create_app(config_class=DevelopmentConfig):
   from server.auth.routes import auth_blueprint
   from server.dashboard.routes import dashboard_blueprint
   from server.experience.routes import experience_blueprint
+  from server.messages.routes import messages_blueprint
+  from server.articles.routes import articles_blueprint
 
   app.register_blueprint(auth_blueprint)
   app.register_blueprint(dashboard_blueprint)
   app.register_blueprint(experience_blueprint)
+  app.register_blueprint(messages_blueprint)
+  app.register_blueprint(articles_blueprint)
 
   return app
 

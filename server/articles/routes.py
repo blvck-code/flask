@@ -4,7 +4,7 @@ import datetime
 from flask import make_response, jsonify, Blueprint, request
 from flask.views import MethodView
 from server.models import Article
-from server import ma, pagination, app, storage, db
+from server import ma, pagination, app, db
 from werkzeug.utils import secure_filename
 from flask_cors import cross_origin
 
@@ -94,19 +94,19 @@ class AddArticleAPI(MethodView):
       firebase_filename += filename_secure
 
       # upload file
-      storage.child(firebase_filename).put(local_filename)
+      # storage.child(firebase_filename).put(local_filename)
 
       # get the url of the file
-      cover_image = storage.child(firebase_filename).get_url(None)
+      # cover_image = storage.child(firebase_filename).get_url(None)
 
-      article = Article(title=title, body=body, cover=cover_image, covername=filename_secure, id=uuid.uuid4(),
+      article = Article(title=title, body=body, cover=filename_secure, covername=filename_secure, id=uuid.uuid4(),
                         timestamp=datetime.datetime.utcnow())
 
       db.session.add(article)
       db.session.commit()
 
       # delete the local file
-      os.remove(os.path.join(app.config['UPLOAD_FOLDER'], filename_secure))
+      # os.remove(os.path.join(app.config['UPLOAD_FOLDER'], filename_secure))
 
     return make_response(jsonify({
       'id': article.id,
